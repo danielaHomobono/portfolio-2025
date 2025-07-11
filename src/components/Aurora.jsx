@@ -2,6 +2,7 @@ import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
 import { useEffect, useRef } from "react";
 
 import './Aurora.css';
+import '../styles/aurora-mobile.css';
 
 const VERT = `#version 300 es
 in vec2 position;
@@ -115,6 +116,9 @@ export default function Aurora(props) {
     amplitude = 1.0,
     blend = 0.5
   } = props;
+  
+  // Detectar si es dispositivo móvil para ajustar colores
+  const isMobile = window.innerWidth <= 768;
   const propsRef = useRef(props);
   propsRef.current = props;
 
@@ -153,7 +157,12 @@ export default function Aurora(props) {
       delete geometry.attributes.uv;
     }
 
-    const colorStopsArray = colorStops.map((hex) => {
+    // Ajustar colores para móvil (verde más suave)
+    const mobileColorStops = isMobile ? 
+      ["#5227FF", "#a0e0a0", "#5227FF"] : // Verde más suave para móvil
+      colorStops;
+      
+    const colorStopsArray = mobileColorStops.map((hex) => {
       const c = new Color(hex);
       return [c.r, c.g, c.b];
     });
@@ -178,10 +187,18 @@ export default function Aurora(props) {
       animateId = requestAnimationFrame(update);
       const { time = t * 0.01, speed = 1.0 } = propsRef.current;
       program.uniforms.uTime.value = time * speed * 0.1;
-      program.uniforms.uAmplitude.value = propsRef.current.amplitude ?? 1.0;
+      // Reducir la amplitud en dispositivos móviles para un efecto más sutil
+      program.uniforms.uAmplitude.value = isMobile ? 
+        (propsRef.current.amplitude ?? 1.0) * 0.7 : // Reducir amplitud en móviles
+        (propsRef.current.amplitude ?? 1.0);
       program.uniforms.uBlend.value = propsRef.current.blend ?? blend;
+      // Usar colores ajustados para móvil
       const stops = propsRef.current.colorStops ?? colorStops;
-      program.uniforms.uColorStops.value = stops.map((hex) => {
+      const adjustedStops = isMobile ? 
+        ["#5227FF", "#a0e0a0", "#5227FF"] : // Verde más suave para móvil
+        stops;
+        
+      program.uniforms.uColorStops.value = adjustedStops.map((hex) => {
         const c = new Color(hex);
         return [c.r, c.g, c.b];
       });

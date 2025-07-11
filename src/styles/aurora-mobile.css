@@ -1,0 +1,12 @@
+/* Estilos específicos para Aurora en dispositivos móviles */
+
+@media (max-width: 768px) {
+  .aurora-container {
+    opacity: 0.7; /* Reduce la opacidad general en móviles */
+  }
+  
+  /* Clase para aplicar filtros específicos al canvas de Aurora */
+  .aurora-container canvas {
+    filter: hue-rotate(-10deg) saturate(0.8); /* Reduce el verde rotando el tono y bajando saturación */
+  }
+}
