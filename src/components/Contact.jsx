@@ -58,7 +58,7 @@ const Contact = () => {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
           >
-            {state.submitting ? 'Enviando...' : 'Enviar mensaje'}
+            {state.submitting ? 'Enviando...' : 'Enviar'}
           </motion.button>
         </motion.form>
       )}

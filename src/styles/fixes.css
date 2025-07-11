@@ -1,0 +1,76 @@
+/* Correcciones para problemas de márgenes y bordes */
+
+/* Reset completo para eliminar márgenes y bordes no deseados */
+html, body, #root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Asegurar que el contenido no cause scroll horizontal */
+.hero-content, 
+#technologies, 
+#projects, 
+#contact,
+.projects-grid,
+.technologies-grid,
+.missions-grid {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ajustar tamaños de fuente para evitar problemas de escala */
+h1, h2, h3, h4, h5, h6 {
+  word-wrap: break-word;
+}
+
+/* Asegurar que las imágenes no causen desbordamiento */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ajustar el ancho de los contenedores principales */
+.hero-content, #technologies, #projects, #contact {
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* Asegurar que el header ocupe todo el ancho */
+header {
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+/* Ajustar el tamaño de los contenedores de proyectos */
+.project-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ajustar el formulario de contacto */
+form {
+  width: 100%;
+  max-width: 1400px;
+  box-sizing: border-box;
+}
+
+/* Ajustar el footer */
+footer {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Eliminar cualquier padding o margen extra en el cuerpo */
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+}

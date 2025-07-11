@@ -7,12 +7,23 @@
 }
 
 /* El fondo con gradiente refleja mi energía, quería que fuera vibrante */
+html {
+  font-size: 100%; /* Volvemos al tamaño estándar del navegador */
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #121229 0%, #4a4a79 50%, #43c0dd 100%);
   min-height: 100vh;
+  font-size: 16px; /* Tamaño absoluto en px */
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
 }
 
 /*///// HEADER Y NAVEGACIÓN /////*/
@@ -20,11 +31,13 @@ body {
 header {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   background: transparent;
   backdrop-filter: none;
   z-index: 1000;
-  padding: 1.5rem 2rem;
+  padding: 1rem 1.5rem;
   box-shadow: none;
   border-bottom: none;
   transition: all 0.3s ease;
@@ -41,7 +54,7 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  gap: 2rem;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
@@ -51,11 +64,11 @@ nav ul {
 nav a:link, nav a:visited {
   text-decoration: none;
   color: #ffffff;
-  font-weight: 600;
-  font-size: 1.3rem;
-  padding: 1rem 2rem;
-  border-radius: 30px;
-  border: 2px solid transparent;
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  border: 1px solid transparent;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -76,7 +89,11 @@ nav a:active {
 
 /*///// HERO SECTION /////*/
 main {
-  margin-top: 100px;
+  margin-top: 0;
+  padding-top: 80px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* La hero section es mi favorita, usé Flexbox para centrar todo */
@@ -100,7 +117,7 @@ main {
 }
 
 .hero-content {
-  max-width: 90%;
+  max-width: 1100px;
   margin: 0 auto;
   position: relative;
   z-index: 2; /* El contenido encima del canvas, quería que destacara */
@@ -108,7 +125,7 @@ main {
 
 /* Combinador descendiente para estilizar párrafos */
 .text-content p {
-  font-size: 2rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   color: #e3f2fd;
   margin-bottom: 2rem;
@@ -117,8 +134,8 @@ main {
 
 /* Combinador directo para los títulos */
 .text-content > h2 {
-  font-size: 5.5rem;
-  font-weight: 500;
+  font-size: 2.8rem;
+  font-weight: 600;
   margin-bottom: 1rem;
   background: linear-gradient(135deg, #64b5f6, #ffffff, #81c784);
   -webkit-background-clip: text;
@@ -146,13 +163,13 @@ main {
 
 /* La animación de la foto es súper divertida, quería que flotara */
 .profile-image {
-  width: 450px;
-  height: 450px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
-  margin-top: 3rem;
+  margin-top: 2rem;
   object-fit: cover;
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
   transition: all 0.3s ease;
   animation: float 6s ease-in-out infinite;
 }
@@ -172,7 +189,7 @@ main {
   background: linear-gradient(135deg, #28a6f4, #fbff02);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2.5rem;
+  font-size: 1.6rem;
   font-weight: 500;
   position: relative;
 }
@@ -184,9 +201,9 @@ main {
 
 /*///// SECCIÓN QUÉ HAGO /////*/
 .what-i-do-section > h2 {
-  font-size: 5rem;
+  font-size: 2.5rem;
   font-weight: 500;
-  margin-top: 10rem;
+  margin-top: 8rem;
   margin-bottom: 3rem;
   background: linear-gradient(135deg, #64b5f6, #ffffff, #81c784);
   -webkit-background-clip: text;  
@@ -205,7 +222,7 @@ main {
 }
 
 .mission-card {
-  padding: 5rem;
+  padding: 2.5rem;
   border-radius: 20px;
   background: transparent;
   transition: all 0.4s ease;
@@ -214,8 +231,7 @@ main {
   position: relative;
   overflow: hidden;
   opacity: 0.9;
-  min-height: 550px;
- 
+  min-height: 350px;
 }
 
 .mission-card:hover {
@@ -242,9 +258,9 @@ main {
 }
 
 .mission-card i {
-  font-size: 6rem;
+  font-size: 3.5rem;
   color: #64b5f6;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   transition: all 0.3s ease;
 }
 
@@ -256,25 +272,24 @@ main {
 .mission-card h3 {
   color: #e3f2fd;
   margin-bottom: 2rem;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
 .mission-card p {
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1.6rem;
+  font-size: 1rem;
   line-height: 1.8;
 }
 
 /*///// SECCIÓN TECNOLOGÍAS /////*/
 #technologies {
   padding: 4rem 2rem;
-  max-width: 90%;
   margin: 0 auto;
 }
 
 #technologies > h2 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: 500;
   margin-bottom: 3rem;
   background: linear-gradient(135deg, #64b5f6, #ffffff, #81c784);
@@ -327,7 +342,6 @@ main {
 
 /* Efecto hover espectacular */
 .tech-card:hover {
-  transform: translateY(-10px) scale(1.05);
   animation-play-state: paused;
 }
 
@@ -362,26 +376,37 @@ main {
   background: linear-gradient(135deg, #64b5f6, #81c784, #ffeb3b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   filter: drop-shadow(0 0 8px rgba(100, 181, 246, 0.4));
-  animation: iconPulse 2s ease-in-out infinite;
+  display: inline-block;
 }
 
-@keyframes iconPulse {
-  0%, 100% { filter: drop-shadow(0 0 8px rgba(100, 181, 246, 0.4)); }
-  50% { filter: drop-shadow(0 0 12px rgba(129, 199, 132, 0.6)); }
+@keyframes iconGlow {
+  0% { filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.6)); }
+  33% { filter: drop-shadow(0 0 15px rgba(50, 255, 50, 0.7)); }
+  66% { filter: drop-shadow(0 0 20px rgba(255, 235, 59, 0.8)); }
+  100% { filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.6)); }
+}
+
+@keyframes iconRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .tech-card:hover i {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 15px rgba(255, 235, 59, 0.6));
-  animation-play-state: paused;
+  transform: rotate(360deg) scale(1.2);
+  filter: drop-shadow(0 0 25px rgba(0, 255, 255, 0.8));
+  background: linear-gradient(135deg, #00FFFF, #32FF32, #FFEB3B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: iconGlow 2s infinite;
 }
+
 
 /* Texto con efecto brillante */
 .tech-card h3 {
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -397,14 +422,13 @@ main {
 /*///// SECCIÓN PROYECTOS /////*/
 #projects {
   padding: 4rem 2rem;
-  max-width: 90%;
   margin: 0 auto;
 }
 
 #projects > h2 {
-  font-size: 5rem;
+  font-size: 2.5rem;
   font-weight: 500;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   background: linear-gradient(135deg, #64b5f6, #ffffff, #81c784);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -414,8 +438,8 @@ main {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
   max-width: 100%;
 }
 
@@ -439,7 +463,7 @@ main {
 
 .project-image-container {
   width: 100%;
-  height: 300px;
+  height: 250px;
   overflow: hidden;
   border-bottom: 3px solid;
   margin-bottom: 1.5rem;
@@ -476,7 +500,7 @@ main {
 .project-card h3 {
   padding: 0 2rem;
   margin-bottom: 1.2rem;
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -484,20 +508,20 @@ main {
   padding: 0 2rem;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 2rem;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   line-height: 1.5;
   flex-grow: 1;
 }
 
 .project-card a {
   display: inline-block;
-  padding: 0.8rem 1.5rem;
+  padding: 0.6rem 1.2rem;
   background: linear-gradient(135deg, #00FFFF, #0080FF);
   color: white;
   text-decoration: none;
   border-radius: 20px;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
   border: none;
   margin: 0 auto;
@@ -513,12 +537,11 @@ main {
 /*///// SECCIÓN CONTACTO /////*/
 #contact {
   padding: 6rem 2rem;
-  max-width: 90%;
   margin: 0 auto;
 }
 
 #contact > h2 {
-  font-size: 5rem;
+  font-size: 2.5rem;
   font-weight: 500;
   margin-bottom: 3rem;
   background: linear-gradient(135deg, #00FFFF, #ffffff, #32FF32);
@@ -531,10 +554,9 @@ main {
 form {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
-  padding: 5rem;
+  padding: 3rem;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  max-width: 1400px;
   margin: 0 auto;
   border: 2px solid rgba(0, 255, 255, 0.1);
 }
@@ -545,16 +567,16 @@ form label {
   margin-bottom: 0.8rem;
   font-weight: 600;
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 form input, form textarea {
   width: 100%;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
   border: 2px solid rgba(0, 255, 255, 0.2);
   border-radius: 12px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   background: rgba(255, 255, 255, 0.05);
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
@@ -590,13 +612,13 @@ form input:focus, form textarea:focus {
 
 /* El botón con ícono me gustó */
 form button {
-  width: 100%;
-  padding: 1.4rem;
+  width: auto;
+  padding: 1rem 4rem;
   background: linear-gradient(135deg, #00FFFF, #0080FF);
   color: white;
   border: none;
   border-radius: 12px;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -604,7 +626,7 @@ form button {
   justify-content: center;
   align-items: center;
   gap: 0.8rem;
-  margin-top: 1rem;
+  margin: 1rem auto 0;
 }
 
 form button:hover {
@@ -657,121 +679,7 @@ footer {
   transform: translateY(-2px);
 }
 
-/*///// RESPONSIVIDAD /////*/
-/* Tablet horizontal */
-@media (max-width: 1080px) {
-  .about-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .missions-grid, .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .technologies-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .profile-image {
-    width: 250px;
-    height: 250px;
-  }
-
-  .text-content > h2, .what-i-do-section > h2, #technologies > h2, #projects > h2, #contact > h2 {
-    font-size: 2.5rem;
-  }
-}
-
-/* Tablet vertical */
-@media (max-width: 768px) {
-  .missions-grid, .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .technologies-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .tech-card i {
-    font-size: 3rem;
-  }
-
-  nav ul {
-    gap: 1rem;
-  }
-
-  nav a {
-    padding: 0.3rem 0.8rem;
-    font-size: 0.9rem;
-  }
-
-  .text-content p {
-    font-size: 1.1rem;
-  }
-}
-
-/* Mobile 1 */
-@media (max-width: 480px) {
-  .hero-content, #technologies, #projects, #contact {
-    max-width: 95%;
-  }
-
-  .technologies-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-
-  .tech-card {
-    padding: 2rem 1rem;
-  }
-
-  .tech-card i {
-    font-size: 2.5rem;
-  }
-
-  .text-content > h2, .what-i-do-section > h2, #technologies > h2, #projects > h2, #contact > h2 {
-    font-size: 2rem;
-  }
-
-  .profile-image {
-    width: 200px;
-    height: 200px;
-  }
-
-  .mission-card, .project-card {
-    padding: 1.5rem;
-  }
-
-  form {
-    padding: 2rem;
-  }
-
-  /* Fuentes relativas para mobile, ¡me pareció importante! */
-  body {
-    font-size: 3.5vw;
-  }
-}
-
-/* Mobile 2 */
-@media (max-width: 375px) {
-  .text-content > h2, .what-i-do-section > h2, #technologies > h2, #projects > h2, #contact > h2 {
-    font-size: 1.8rem;
-  }
-
-  .profile-image {
-    width: 180px;
-    height: 180px;
-  }
-
-  nav a {
-    font-size: 0.8rem;
-  }
-
-  form input, form button {
-    font-size: 0.9rem;
-  }
-}
+/* Los estilos responsivos se han movado a responsive.css */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -801,24 +709,24 @@ footer {
 }
 
 .success-message h3 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: #00FFFF;
   margin-bottom: 1.5rem;
 }
 
 .success-message p {
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: white;
   margin-bottom: 2rem;
 }
 
 .success-message button {
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.5rem;
   background: linear-gradient(135deg, #00FFFF, #0080FF);
   color: white;
   border: none;
   border-radius: 20px;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;

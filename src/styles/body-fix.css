@@ -1,0 +1,38 @@
+/* Corrección específica para el problema del espacio oscuro debajo del header */
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: linear-gradient(135deg, #121229 0%, #4a4a79 50%, #43c0dd 100%);
+}
+
+body::before {
+  content: none !important;
+}
+
+body::after {
+  content: none !important;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+.hero-section {
+  margin-top: -80px;
+  padding-top: 80px;
+}
+
+header {
+  position: absolute;
+  background: transparent !important;
+}
+
+header.scrolled {
+  position: fixed;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.15) 0%, rgba(0, 128, 255, 0.15) 50%, rgba(50, 255, 50, 0.15) 100%) !important;
+  backdrop-filter: blur(15px);
+}

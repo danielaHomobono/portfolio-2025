@@ -19,26 +19,15 @@ const Hero = () => {
           transition={{ duration: 1 }}
         >
           <div className="text-content">
-            <motion.h2
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-            >
-              Hola!
-            </motion.h2>
+            <h2 className="spectacular-title">
+              ¡Hola!
+            </h2>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 1 }}
             >
-              Soy <span className="highlight">Daniela Homobono</span>, Full Stack Developer
-              especializada en soluciones escalables con React, Node.js y AWS desde
-              Río Tercero, Córdoba. Con experiencia comprobada en diseño e implementación
-              de aplicaciones digitales, actualmente trabajo como Account Administrator
-              en Milkaut, donde he reducido un 25% los tiempos de procesamiento
-              administrativo. Certificada por Stanford University y AWS, mi pasión
-              es optimizar procesos y crear soluciones innovadoras que impulsen
-              los objetivos del negocio.
+              Soy <span className="highlight" style={{fontSize: '1.4em', fontWeight: 'bold', textShadow: '0 0 10px rgba(0, 255, 255, 0.8)'}}>Daniela Homobono</span>, Full Stack Developer de Río Tercero, Córdoba. Desde que escribí mi primera línea de código, supe que había encontrado mi verdadera pasión. Cada proyecto es una oportunidad para crear algo único que resuelva problemas reales. Me fascina el proceso creativo de transformar ideas en experiencias digitales que impacten positivamente en las personas. La programación no es solo mi profesión, es mi forma de expresión y lo que quiero hacer por el resto de mi vida. <span className="highlight" style={{fontSize: '1.1em'}}>¡Bienvenidos a mi mundo digital!</span>
             </motion.p>
           </div>
           <motion.div 
@@ -72,19 +61,19 @@ const Hero = () => {
           <div className="missions-grid">
             {[
               {
-                icon: "fas fa-laptop-code",
-                title: "Crear Experiencias Web",
-                description: "Diseño y desarrollo sitios web responsivos, modernos y accesibles usando HTML, CSS y JavaScript, transformando ideas en experiencias digitales únicas."
+                icon: "fas fa-code",
+                title: "Desarrollo Full Stack",
+                description: "Creo aplicaciones web completas utilizando React, Redux y Node.js en el frontend, e implemento APIs robustas con Express, Flask y bases de datos SQL/NoSQL. Mi enfoque end-to-end garantiza soluciones coherentes y escalables."
               },
               {
                 icon: "fas fa-mobile-alt",
-                title: "Conectar a Través de Apps",
-                description: "Creo aplicaciones móviles intuitivas con Kotlin y bases de datos como SQLite, llevando soluciones prácticas a la palma de la mano."
+                title: "Desarrollo Móvil",
+                description: "Diseño y desarrollo aplicaciones móviles nativas con Kotlin y C#, integrando bases de datos SQLite para crear experiencias fluidas y responsivas que funcionan perfectamente en cualquier dispositivo."
               },
               {
                 icon: "fas fa-server",
-                title: "Potenciar el Backend",
-                description: "Construyo APIs robustas y escalables con Python, Flask y Node.js, asegurando que los sistemas funcionen sin problemas detrás de escena."
+                title: "DevOps y Cloud",
+                description: "Implemento y gestiono infraestructura en la nube con AWS, automatizo procesos de CI/CD con GitHub Actions y aplico metodologías ágiles para garantizar despliegues eficientes y seguros."
               }
             ].map((item, i) => (
               <motion.div

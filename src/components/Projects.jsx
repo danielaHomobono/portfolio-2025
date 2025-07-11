@@ -19,7 +19,7 @@ const Projects = () => {
     {
       title: "Generador de CV",
       image: "/assets/img/generador-cv.png",
-      description: "Generador automático de CV con API de GitHub y JavaScript",
+      description: "Generador automático de CV con API de GitHub, React y Node.js",
       link: "https://github.com/danielaHomobono/Portfolio-generator",
       color: "#0080FF"
     },
@@ -50,13 +50,6 @@ const Projects = () => {
       description: "Sitio creado con React y React Three Fiber",
       link: "https://r3f-vite-starter-sandy.vercel.app/",
       color: "#00FFFF"
-    },
-    {
-      title: "Sitio de Películas",
-      image: "/assets/img/peliculas.png",
-      description: "Plataforma de streaming desarrollada con React",
-      link: "#",
-      color: "#32FF32"
     },
     {
       title: "Calculadora de Probabilidad",
