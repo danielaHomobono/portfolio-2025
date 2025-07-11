@@ -13,7 +13,7 @@ const Projects = () => {
       title: "Tata Clothe",
       image: "/assets/img/ecommerce.png",
       description: "E-commerce completo con React, Node.js y MongoDB",
-      link: "https://github.com/danielaHomobono/tata-clothe",
+      link: "https://github.com/danielaHomobono/Ecommerce-project",
       color: "#32FF32"
     },
     {
@@ -34,7 +34,7 @@ const Projects = () => {
       title: "Queen of the Court",
       image: "/assets/img/kapp.png",
       description: "App de gestión de club de tenis con Kotlin y SQLite",
-      link: "https://github.com/danielaHomobono/queen-of-the-court",
+      link: "https://github.com/danielaHomobono/AndroidClubDeportivo",
       color: "#32FF32"
     },
     {
