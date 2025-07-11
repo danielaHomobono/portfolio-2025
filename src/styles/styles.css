@@ -65,7 +65,7 @@ nav a:link, nav a:visited {
   text-decoration: none;
   color: #ffffff;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.3rem;
   padding: 0.6rem 1.2rem;
   border-radius: 25px;
   border: 1px solid transparent;
@@ -125,7 +125,7 @@ main {
 
 /* Combinador descendiente para estilizar párrafos */
 .text-content p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.8;
   color: #e3f2fd;
   margin-bottom: 2rem;
@@ -272,13 +272,13 @@ main {
 .mission-card h3 {
   color: #e3f2fd;
   margin-bottom: 2rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
 .mission-card p {
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.8;
 }
 
@@ -508,7 +508,7 @@ main {
   padding: 0 2rem;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 2rem;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   line-height: 1.5;
   flex-grow: 1;
 }
@@ -567,7 +567,7 @@ form label {
   margin-bottom: 0.8rem;
   font-weight: 600;
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.4rem;
 }
 
 form input, form textarea {
@@ -576,7 +576,7 @@ form input, form textarea {
   margin-bottom: 1.5rem;
   border: 2px solid rgba(0, 255, 255, 0.2);
   border-radius: 12px;
-  font-size: 1rem;
+  font-size: 1.4rem;
   background: rgba(255, 255, 255, 0.05);
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
@@ -618,7 +618,7 @@ form button {
   color: white;
   border: none;
   border-radius: 12px;
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
