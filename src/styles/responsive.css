@@ -19,7 +19,7 @@ html {
 /* Desktop */
 @media (max-width: 1440px) {
   html {
-    font-size: 62.5%; /* 10px */
+    font-size: 70%; /* 10px */
   }
   
   .profile-image {
@@ -114,7 +114,7 @@ html {
 /* Tablet portrait */
 @media (max-width: 768px) {
   html {
-    font-size: 55%;
+    font-size: 65%;
   }
   
   header {
@@ -166,7 +166,7 @@ html {
 /* Mobile large */
 @media (max-width: 576px) {
   html {
-    font-size: 60%;
+    font-size: 70%;
   }
   
   header {
@@ -200,7 +200,7 @@ html {
   }
   
   .text-content p {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
   
   .profile-image {
@@ -218,15 +218,15 @@ html {
   }
   
   .tech-card i {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
   
   .project-card h3 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   
   .project-card p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
   
   form {
@@ -241,7 +241,7 @@ html {
 /* Mobile small */
 @media (max-width: 375px) {
   html {
-    font-size: 45%;
+    font-size: 70%;
   }
   
   .profile-image {
@@ -250,7 +250,7 @@ html {
   }
   
   .tech-card i {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
   
   .project-image-container {
