@@ -48,7 +48,7 @@ const Projects = () => {
       title: "Avatar con React Three Fiber",
       image: "/assets/img/porfolio.png",
       description: "Sitio creado con React y React Three Fiber",
-      link: "https://r3f-vite-starter-sandy.vercel.app/",
+      link: "https://r3f-vite-portfolio.vercel.app/",
       color: "#00FFFF"
     },
     {
