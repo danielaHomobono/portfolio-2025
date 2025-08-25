@@ -3,17 +3,17 @@ import { motion } from 'framer-motion';
 const Projects = () => {
   const projects = [
     {
-      title: "Asistente Legal Inteligente",
-      image: "/assets/img/legal-facil.png",
-      description: "Asistente conversacional con OpenAI API, Node.js y Express.js",
-      link: "https://legal-facil-frontend.onrender.com",
+      title: "iPhone 15 Pro Max Website",
+      image: "/assets/img/iphone.png",
+      description: "Un sitio web moderno e interactivo inspirado en la experiencia oficial de Apple, creado con React, Vite y Three.js. Descubre el iPhone 15 Pro Max en 3D, explora sus características, colores y tecnología de una forma visualmente impactante.",
+      link: "https://iphon-ewebsite.vercel.app/",
       color: "#00FFFF"
     },
     {
-      title: "Tata Clothe",
-      image: "/assets/img/ecommerce.png",
-      description: "E-commerce completo con React, Node.js y MongoDB",
-      link: "https://github.com/danielaHomobono/Ecommerce-project",
+      title: "AI Resume Analyzer",
+      image: "/assets/img/ai-resume.png",
+      description: "Aplicación web full-stack construida con React, React Router, TypeScript y TailwindCSS. Permite a los usuarios subir su currículum, analizarlo con inteligencia artificial (Claude 3 Sonnet vía Puter), obtener feedback personalizado y visualizar resultados de manera interactiva.",
+      link: "https://puter.com/app/jsm-ai-resume-analizer",
       color: "#32FF32"
     },
     {
