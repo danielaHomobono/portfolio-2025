@@ -1,0 +1,61 @@
+/* Optimizaciones de rendimiento */
+
+/* Activar aceleración por GPU para elementos animados */
+.spectacular-title,
+.mission-card,
+.tech-card,
+.project-card,
+.profile-image {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Smooth scroll nativo */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimizaciones de rendimiento */
+.spectacular-title,
+.mission-card,
+.tech-card,
+.project-card,
+.profile-image {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Optimización de scroll */
+body {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Lazy loading para secciones */
+section {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Respeto por preferencias de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Optimizar animaciones para GPU */
+@keyframes techFloat {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -5px, 0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -20px, 0); }
+}
+
+/* Remover will-change después de animaciones */
+.animation-complete {
+  will-change: auto;
+}

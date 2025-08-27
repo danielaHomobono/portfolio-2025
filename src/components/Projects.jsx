@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const Projects = () => {
+  const [ref, isVisible] = useIntersectionObserver();
   const projects = [
     {
       title: "iPhone 15 Pro Max Website",
@@ -61,7 +63,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects">
+    <section id="projects" ref={ref}>
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -76,8 +78,8 @@ const Projects = () => {
             key={index}
             className="project-card"
             initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 * index, duration: 0.6 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ delay: isVisible ? 0.1 * index : 0, duration: 0.6 }}
             whileHover={{ 
               y: -15,
               boxShadow: `0 20px 40px rgba(${project.color === "#00FFFF" ? "0, 255, 255" : 

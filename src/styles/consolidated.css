@@ -1,0 +1,42 @@
+/* Archivo consolidado - fusionar con styles.css después */
+
+/* Optimizaciones de rendimiento */
+html {
+  scroll-behavior: smooth;
+}
+
+.spectacular-title,
+.mission-card,
+.tech-card,
+.project-card,
+.profile-image {
+  will-change: transform;
+}
+
+/* Estilos para el texto de bienvenida */
+.welcome-text {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.welcome-text .highlight {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { 
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.9), 0 0 25px rgba(0, 255, 255, 0.6), 0 0 35px rgba(0, 255, 255, 0.4);
+  }
+  50% { 
+    text-shadow: 0 0 25px rgba(0, 255, 255, 1), 0 0 35px rgba(0, 255, 255, 0.8), 0 0 45px rgba(0, 255, 255, 0.6);
+  }
+}
+
+/* Respeto por preferencias de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

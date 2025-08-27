@@ -1,14 +1,16 @@
 import { motion } from 'framer-motion';
 import { useForm, ValidationError } from '@formspree/react';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("mpwrvldo");
+  const [ref, isVisible] = useIntersectionObserver();
 
   return (
-    <section id="contact">
+    <section id="contact" ref={ref}>
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.8 }}
       >
         Contacto
@@ -29,8 +31,8 @@ const Contact = () => {
         <motion.form 
           onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ delay: isVisible ? 0.2 : 0, duration: 0.8 }}
         >
           <div className="form-grid">
             <div className="form-group">
