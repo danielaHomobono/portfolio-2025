@@ -100,9 +100,33 @@ const Hero = () => {
                 transition={{ delay: 1.8 + i * 0.2, duration: 0.6 }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               >
-                <i className={item.icon} aria-hidden="true"></i>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+                <div className="card-content">
+                  <i className={item.icon} aria-hidden="true"></i>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+                <div className="card-hover-info">
+                  <div className="tech-stack">
+                    <h4>Stack:</h4>
+                    <div className="tech-tags">
+                      {["React", "Node.js", "MongoDB", "Express"][i] && 
+                        ["React • Node.js • MongoDB", "Kotlin • C# • SQLite", "AWS • Docker • CI/CD"][i].split(" • ").map((tech, idx) => (
+                          <span key={idx} className="tech-tag">{tech}</span>
+                        ))
+                      }
+                    </div>
+                  </div>
+                  <div className="stats">
+                    <div className="stat">
+                      <span className="stat-value">{["Full Stack", "Nativo", "Cloud"][i]}</span>
+                      <span className="stat-label">Enfoque</span>
+                    </div>
+                    <div className="stat">
+                      <span className="stat-value">{["APIs REST", "SQLite", "CI/CD"][i]}</span>
+                      <span className="stat-label">Especialidad</span>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>

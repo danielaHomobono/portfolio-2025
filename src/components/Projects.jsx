@@ -28,7 +28,7 @@ const Projects = () => {
     {
       title: "El Lector Voraz",
       image: "/assets/img/voraz.png",
-      description: "Aplicación gastronómica creada con Node.js y MongoDB",
+      description: "Aplicación para librería creada con Node.js y MongoDB",
       link: "https://el-lector-voraz.onrender.com",
       color: "#00FFFF"
     },

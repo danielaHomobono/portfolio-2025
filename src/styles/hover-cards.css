@@ -1,0 +1,91 @@
+/* Estilos para las tarjetas con información en hover */
+
+.card-content {
+  transition: all 0.5s ease;
+}
+
+.card-hover-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(50, 255, 50, 0.05));
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  border-radius: 25px;
+}
+
+.mission-card:hover .card-content {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.mission-card:hover .card-hover-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tech-stack {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.tech-stack h4 {
+  color: #00FFFF;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.tech-tag {
+  background: rgba(0, 255, 255, 0.2);
+  color: #00FFFF;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  font-weight: 500;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  color: #32FF32;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(50, 255, 50, 0.5);
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

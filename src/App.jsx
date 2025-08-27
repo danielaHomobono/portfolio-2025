@@ -14,6 +14,7 @@ import './styles/body-fix.css'
 import './styles/title-animation.css'
 import './styles/welcome-text.css'
 import './styles/performance.css'
+import './styles/hover-cards.css'
 
 function App() {
   useScrollOptimization();
