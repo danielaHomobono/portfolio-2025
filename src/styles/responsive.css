@@ -200,12 +200,16 @@ html {
   }
   
   .text-content p {
-    font-size: 1.9rem;
+    font-size: 1.4rem;
   }
   
   .profile-image {
     width: 220px;
     height: 220px;
+  }
+  
+  .welcome-text {
+    margin-top: 3rem !important;
   }
   
   .technologies-grid {
@@ -244,9 +248,17 @@ html {
     font-size: 70%;
   }
   
+  .text-content p {
+    font-size: 1.2rem;
+  }
+  
   .profile-image {
     width: 180px;
     height: 180px;
+  }
+  
+  .welcome-text {
+    margin-top: 4rem !important;
   }
   
   .tech-card i {

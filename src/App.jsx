@@ -1,10 +1,15 @@
+import { useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Technologies from './components/Technologies'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import LoadingScreen from './components/LoadingScreen'
+import DeveloperModeEasterEgg from './components/DeveloperModeEasterEgg'
 import { useScrollOptimization } from './hooks/useScrollOptimization'
+import foto from './assets/img/foto3.jpeg'
 import './styles/reset.css'
 import './styles/styles.css'
 import './styles/responsive.css'
@@ -15,20 +20,36 @@ import './styles/title-animation.css'
 import './styles/welcome-text.css'
 import './styles/performance.css'
 import './styles/hover-cards.css'
+import './styles/loading.css'
+import './styles/matrix-photo.css'
+import './styles/performance.css'
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   useScrollOptimization();
+  
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
   
   return (
     <>
-      <Header />
-      <main>
-        <Hero />
-        <Technologies />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
+      <AnimatePresence mode="wait">
+        {isLoading ? (
+          <LoadingScreen key="loading" onComplete={handleLoadingComplete} />
+        ) : (
+          <div key="main">
+            <Header />
+            <main>
+              <Hero />
+              <Technologies />
+              <Projects />
+              <Contact />
+            </main>
+            <Footer />
+          </div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

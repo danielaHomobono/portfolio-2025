@@ -1,6 +1,8 @@
 import Aurora from './Aurora'
 import { motion } from 'framer-motion'
 import foto from '../assets/img/foto3.jpeg'
+import LazyImage from './LazyImage'
+import MatrixPhoto from './MatrixPhoto'
 
 const Hero = () => {
   return (
@@ -52,11 +54,19 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.9, duration: 0.8 }}
           >
-            <img
+            <MatrixPhoto
               src={foto}
               alt="Daniela Homobono"
               className="profile-image"
             />
+            <motion.div 
+              className="hover-hint"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 2.5, duration: 0.8 }}
+            >
+              <span className="hover-text">Hover the picture</span>
+            </motion.div>
           </motion.div>
         </motion.div>
         
