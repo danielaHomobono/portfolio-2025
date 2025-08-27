@@ -208,8 +208,15 @@ html {
     height: 220px;
   }
   
+  .matrix-photo-container {
+    width: 250px !important;
+    height: 250px !important;
+  }
+  
   .welcome-text {
-    margin-top: 3rem !important;
+    margin-top: 10rem !important;
+    z-index: 1 !important;
+    position: relative !important;
   }
   
   .technologies-grid {
@@ -257,8 +264,15 @@ html {
     height: 180px;
   }
   
+  .matrix-photo-container {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  
   .welcome-text {
-    margin-top: 4rem !important;
+    margin-top: 12rem !important;
+    z-index: 1 !important;
+    position: relative !important;
   }
   
   .tech-card i {
