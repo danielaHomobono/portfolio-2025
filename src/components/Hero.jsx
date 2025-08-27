@@ -31,11 +31,17 @@ const Hero = () => {
             </motion.p>
             <motion.div
               className="welcome-text"
-              initial={{ opacity: 0, scale: 0.8, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ delay: 2.5, duration: 1.2, ease: "backOut" }}
+              initial={{ opacity: 0, scale: 0.5, y: 50, rotateX: 90 }}
+              animate={{ opacity: 1, scale: 1, y: 0, rotateX: 0 }}
+              transition={{ 
+                delay: 2.5, 
+                duration: 1.5, 
+                ease: "backOut",
+                type: "spring",
+                bounce: 0.4
+              }}
             >
-              <span className="highlight" style={{fontSize: '1.8em', fontWeight: 'bold', textShadow: '0 0 15px rgba(0, 255, 255, 0.9)', display: 'block', marginTop: '1.5rem'}}>
+              <span className="highlight" style={{fontSize: '2.2em', fontWeight: 'bold', display: 'block', marginTop: '1.5rem', letterSpacing: '2px'}}>
                 ¡Bienvenidos a mi mundo digital!
               </span>
             </motion.div>
