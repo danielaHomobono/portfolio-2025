@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section id="about-me" className="hero-section">
       <Aurora
-        colorStops={["#00FFFF", "#0080FF", "#32FF32"]}
+        colorStops={["#8b5cf6", "#43c0dd", "#a855f7"]}
         blend={0.7}
         amplitude={1.2}
         speed={0.3}
@@ -29,7 +29,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 1 }}
             >
-              Soy <span className="highlight" style={{fontSize: '1.4em', fontWeight: 'bold', textShadow: '0 0 10px rgba(0, 255, 255, 0.8)'}}>Daniela Homobono</span>, Full Stack Developer de Río Tercero, Córdoba. Desde que escribí mi primera línea de código, supe que había encontrado mi verdadera pasión. Cada proyecto es una oportunidad para crear algo único que resuelva problemas reales. Me fascina el proceso creativo de transformar ideas en experiencias digitales que impacten positivamente en las personas. La programación no es solo mi profesión, es mi forma de expresión y lo que quiero hacer por el resto de mi vida.
+              Soy <span className="highlight" style={{fontSize: '1.4em', fontWeight: 'bold', textShadow: '0 0 10px rgba(139, 92, 246, 0.8)'}}>Daniela Homobono</span>, Full Stack Developer de Río Tercero, Córdoba. Desde que escribí mi primera línea de código, supe que había encontrado mi verdadera pasión. Cada proyecto es una oportunidad para crear algo único que resuelva problemas reales. Me fascina el proceso creativo de transformar ideas en experiencias digitales que impacten positivamente en las personas. La programación no es solo mi profesión, es mi forma de expresión y lo que quiero hacer por el resto de mi vida.
             </motion.p>
             <motion.div
               className="welcome-text"

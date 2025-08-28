@@ -22,6 +22,7 @@ import './styles/performance.css'
 import './styles/hover-cards.css'
 import './styles/loading.css'
 import './styles/matrix-photo.css'
+import './styles/hover-hint.css'
 import './styles/performance.css'
 
 function App() {

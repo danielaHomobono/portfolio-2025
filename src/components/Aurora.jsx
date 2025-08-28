@@ -112,7 +112,7 @@ void main() {
 
 export default function Aurora(props) {
   const {
-    colorStops = ["#5227FF", "#7cff67", "#5227FF"],
+    colorStops = ["#6366F1", "#06B6D4", "#8B5CF6"],
     amplitude = 1.0,
     blend = 0.5
   } = props;
@@ -159,7 +159,7 @@ export default function Aurora(props) {
 
     // Ajustar colores para móvil (verde más suave)
     const mobileColorStops = isMobile ? 
-      ["#5227FF", "#a0e0a0", "#5227FF"] : // Verde más suave para móvil
+      ["#6366F1", "#06B6D4", "#6366F1"] : // Celeste turquesa para móvil
       colorStops;
       
     const colorStopsArray = mobileColorStops.map((hex) => {
@@ -195,7 +195,7 @@ export default function Aurora(props) {
       // Usar colores ajustados para móvil
       const stops = propsRef.current.colorStops ?? colorStops;
       const adjustedStops = isMobile ? 
-        ["#5227FF", "#a0e0a0", "#5227FF"] : // Verde más suave para móvil
+        ["#6366F1", "#06B6D4", "#6366F1"] : // Celeste turquesa para móvil
         stops;
         
       program.uniforms.uColorStops.value = adjustedStops.map((hex) => {

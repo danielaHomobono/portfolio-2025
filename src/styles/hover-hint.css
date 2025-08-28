@@ -1,0 +1,40 @@
+/* Hover hint para la imagen - sin fondo */
+.hover-hint {
+  margin-top: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #a855f7;
+  text-align: center;
+  text-shadow: 0 0 15px rgba(168, 85, 247, 0.8);
+  transition: all 0.3s ease;
+  background: none !important;
+  border: none;
+  padding: 0;
+  width: 100%;
+}
+
+.hover-hint:hover {
+  color: #43c0dd;
+  text-shadow: 0 0 20px rgba(67, 192, 221, 0.9);
+  transform: translateY(-3px);
+  background: none !important;
+}
+
+.desktop-text {
+  display: inline;
+}
+
+.mobile-text {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-text {
+    display: none;
+  }
+  
+  .mobile-text {
+    display: inline;
+  }
+}
