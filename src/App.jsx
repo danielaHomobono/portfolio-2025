@@ -8,6 +8,8 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
 import DeveloperModeEasterEgg from './components/DeveloperModeEasterEgg'
+import GSAPAnimations from './components/GSAPAnimations'
+import TextReveal from './components/TextReveal'
 import { useScrollOptimization } from './hooks/useScrollOptimization'
 import foto from './assets/img/foto3.jpeg'
 import './styles/reset.css'
@@ -23,6 +25,7 @@ import './styles/hover-cards.css'
 import './styles/loading.css'
 import './styles/matrix-photo.css'
 import './styles/hover-hint.css'
+import './styles/text-reveal.css'
 import './styles/performance.css'
 
 function App() {
@@ -40,6 +43,8 @@ function App() {
           <LoadingScreen key="loading" onComplete={handleLoadingComplete} />
         ) : (
           <div key="main">
+            <GSAPAnimations />
+            <TextReveal />
             <Header />
             <main>
               <Hero />

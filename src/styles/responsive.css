@@ -98,7 +98,6 @@ html {
   .profile-image {
     width: 300px;
     height: 300px;
-    margin-top: 1rem;
   }
   
   nav ul {
@@ -209,8 +208,13 @@ html {
   }
   
   .matrix-photo-container {
-    width: 250px !important;
-    height: 250px !important;
+    width: 220px !important;
+    height: 220px !important;
+  }
+  
+  .matrix-canvas {
+    width: 220px !important;
+    height: 220px !important;
   }
   
   .welcome-text {
@@ -265,8 +269,13 @@ html {
   }
   
   .matrix-photo-container {
-    width: 200px !important;
-    height: 200px !important;
+    width: 180px !important;
+    height: 180px !important;
+  }
+  
+  .matrix-canvas {
+    width: 180px !important;
+    height: 180px !important;
   }
   
   .welcome-text {

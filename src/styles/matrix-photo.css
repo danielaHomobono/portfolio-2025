@@ -5,7 +5,6 @@
   width: 280px;
   height: 280px;
   cursor: pointer;
-  animation: float 6s ease-in-out infinite;
 }
 
 .matrix-photo-container img {
@@ -13,10 +12,10 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  border: 3px solid rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
   transition: all 0.3s ease;
-  margin-top: 0;
+  display: block;
 }
 
 .matrix-canvas {
@@ -30,9 +29,10 @@
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 2;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 40px rgba(0, 255, 255, 0.8);
+  border: 3px solid rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
   box-sizing: border-box;
+  display: block;
 }
 
 .matrix-canvas.matrix-visible {
@@ -135,14 +135,6 @@
   .matrix-photo-container {
     width: 250px;
     height: 250px;
-  }
-  
-  .matrix-photo-container img {
-    margin-top: -1rem;
-  }
-  
-  .matrix-canvas {
-    top: -1rem;
   }
   
   @media (max-width: 768px) {

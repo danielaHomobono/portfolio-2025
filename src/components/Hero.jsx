@@ -3,16 +3,23 @@ import { motion } from 'framer-motion'
 import foto from '../assets/img/foto3.jpeg'
 import LazyImage from './LazyImage'
 import MatrixPhoto from './MatrixPhoto'
+import { useGSAP } from '../hooks/useGSAP'
+import { useDeviceDetection } from '../hooks/useDeviceDetection'
 
 const Hero = () => {
+  const containerRef = useGSAP()
+  const { isLowEnd } = useDeviceDetection()
+  
   return (
-    <section id="about-me" className="hero-section">
-      <Aurora
-        colorStops={["#8b5cf6", "#43c0dd", "#a855f7"]}
-        blend={0.7}
-        amplitude={1.2}
-        speed={0.3}
-      />
+    <section id="about-me" className="hero-section" ref={containerRef}>
+      {!isLowEnd && (
+        <Aurora
+          colorStops={["#8b5cf6", "#43c0dd", "#a855f7"]}
+          blend={0.7}
+          amplitude={1.2}
+          speed={0.3}
+        />
+      )}
       <div className="hero-content">
         <motion.div 
           className="about-container"
@@ -20,7 +27,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <div className="text-content">
+          <div className="text-content parallax-slow">
             <h2 className="spectacular-title">
               ¡Hola!
             </h2>
@@ -49,7 +56,7 @@ const Hero = () => {
             </motion.div>
           </div>
           <motion.div 
-            className="profile-image-container"
+            className="profile-image-container parallax-fast"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.9, duration: 0.8 }}

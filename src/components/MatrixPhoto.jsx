@@ -9,19 +9,25 @@ const MatrixPhoto = ({ src, alt, className }) => {
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
-    
-    canvas.width = 280;
-    canvas.height = 280;
+
+    // Obtener tamaño real del contenedor (ancho y alto)
+    const container = canvas.parentElement;
+    const width = container.offsetWidth;
+    const height = container.offsetHeight;
+
+    // Ajustar el tamaño interno del canvas para que coincida exactamente
+    canvas.width = width;
+    canvas.height = height;
 
     const chars = '01100110011001100110011001100110011001100110011001100110011001'.split('');
     const words = ['BEST', 'PROGRAMER', 'EVER'];
     const fontSize = 12;
-    const columns = canvas.width / fontSize;
-    const drops = Array(Math.floor(columns)).fill(1);
-    const columnWords = Array(Math.floor(columns)).fill(null).map(() => 
+    const columns = Math.floor(canvas.width / fontSize);
+    const drops = Array(columns).fill(1);
+    const columnWords = Array(columns).fill(null).map(() =>
       Math.random() < 0.3 ? words[Math.floor(Math.random() * words.length)] : null
     );
-    const wordPositions = Array(Math.floor(columns)).fill(0);
+    const wordPositions = Array(columns).fill(0);
 
     const draw = () => {
       // Fondo negro
@@ -37,7 +43,7 @@ const MatrixPhoto = ({ src, alt, className }) => {
           // Mostrar letra de la palabra
           const letterIndex = drops[i] - wordPositions[i];
           const letter = columnWords[i][letterIndex];
-          
+
           ctx.fillStyle = '#43c0dd';
           ctx.font = `bold ${fontSize + 4}px monospace`;
           ctx.shadowColor = '#43c0dd';
