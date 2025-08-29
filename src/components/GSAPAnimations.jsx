@@ -5,9 +5,10 @@ const GSAPAnimations = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       // Floating animation for profile image
-      const profileImg = document.querySelector('.profile-image')
-      if (profileImg) {
-        gsap.to(profileImg, {
+      // Floating animation for profile image (ahora en el contenedor)
+      const matrixPhotoContainer = document.querySelector('.matrix-photo-container')
+      if (matrixPhotoContainer) {
+        gsap.to(matrixPhotoContainer, {
           y: -10,
           duration: 2,
           ease: 'power1.inOut',

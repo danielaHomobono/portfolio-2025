@@ -202,19 +202,14 @@ html {
     font-size: 1.4rem;
   }
   
-  .profile-image {
+  .profile-image,
+  .matrix-photo-container,
+  .matrix-photo-container img,
+  .matrix-canvas {
     width: 220px;
     height: 220px;
-  }
-  
-  .matrix-photo-container {
-    width: 220px !important;
-    height: 220px !important;
-  }
-  
-  .matrix-canvas {
-    width: 220px !important;
-    height: 220px !important;
+    border-radius: 50%;
+    box-sizing: border-box;
   }
   
   .welcome-text {
@@ -263,19 +258,14 @@ html {
     font-size: 1.2rem;
   }
   
-  .profile-image {
+  .profile-image,
+  .matrix-photo-container,
+  .matrix-photo-container img,
+  .matrix-canvas {
     width: 180px;
     height: 180px;
-  }
-  
-  .matrix-photo-container {
-    width: 180px !important;
-    height: 180px !important;
-  }
-  
-  .matrix-canvas {
-    width: 180px !important;
-    height: 180px !important;
+    border-radius: 50%;
+    box-sizing: border-box;
   }
   
   .welcome-text {
