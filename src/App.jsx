@@ -26,6 +26,7 @@ import './styles/loading.css'
 import './styles/matrix-photo.css'
 import './styles/hover-hint.css'
 import './styles/text-reveal.css'
+import './styles/creative-fonts.css'
 import './styles/performance.css'
 
 function App() {

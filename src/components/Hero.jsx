@@ -29,7 +29,7 @@ const Hero = () => {
         >
           <div className="text-content parallax-slow">
             <h2 className="spectacular-title">
-              ¡Hola!
+              ¡HOLA!
             </h2>
             <motion.p
               initial={{ opacity: 0 }}
@@ -50,8 +50,8 @@ const Hero = () => {
                 bounce: 0.4
               }}
             >
-              <span className="highlight" style={{fontSize: '2.2em', fontWeight: 'bold', display: 'block', marginTop: '1.5rem', letterSpacing: '2px'}}>
-                ¡Bienvenidos a mi mundo digital!
+              <span className="highlight" style={{fontSize: '2.2em', fontWeight: '700', display: 'block', marginTop: '1.5rem', letterSpacing: '2px', fontFamily: 'Orbitron, monospace', textTransform: 'uppercase'}}>
+                ¡BIENVENIDOS A MI MUNDO DIGITAL!
               </span>
             </motion.div>
           </div>

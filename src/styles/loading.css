@@ -28,9 +28,9 @@
   position: absolute;
   width: 4px;
   height: 4px;
-  background: radial-gradient(circle, #00FFFF, transparent);
+  background: radial-gradient(circle, #a855f7, transparent);
   border-radius: 50%;
-  box-shadow: 0 0 10px #00FFFF;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.8);
 }
 
 .loading-logo {
@@ -40,21 +40,21 @@
 .logo-letter {
   font-size: 8rem;
   font-weight: 900;
-  color: #ffffff;
+  color: #a855f7;
   text-shadow: 
-    0 0 20px rgba(0, 255, 255, 1),
-    0 0 40px rgba(0, 255, 255, 0.8),
-    0 0 60px rgba(0, 255, 255, 0.6);
-  font-family: 'Montserrat', sans-serif;
+    0 0 20px rgba(168, 85, 247, 1),
+    0 0 40px rgba(67, 192, 221, 0.8),
+    0 0 60px rgba(168, 85, 247, 0.6);
+  font-family: 'Orbitron', monospace;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 120px;
   height: 120px;
-  border: 3px solid rgba(0, 255, 255, 0.5);
+  border: 3px solid rgba(168, 85, 247, 0.5);
   border-radius: 50%;
   position: relative;
-  background: rgba(0, 255, 255, 0.1);
+  background: rgba(168, 85, 247, 0.1);
   backdrop-filter: blur(10px);
 }
 
@@ -67,7 +67,7 @@
   bottom: -5px;
   border: 2px solid transparent;
   border-radius: 50%;
-  background: linear-gradient(45deg, #00FFFF, #32FF32, #FFEB3B, #00FFFF);
+  background: linear-gradient(45deg, #a855f7, #43c0dd, #8b5cf6, #a855f7);
   background-size: 400% 400%;
   animation: gradientSpin 3s ease infinite;
   z-index: -1;
@@ -86,12 +86,13 @@
 
 .loading-text h2 {
   font-size: 1.8rem;
-  font-weight: 600;
-  background: linear-gradient(90deg, #64b5f6, #81c784, #ffeb3b, #64b5f6);
+  font-weight: 400;
+  font-family: 'Orbitron', monospace;
+  background: linear-gradient(90deg, #a855f7, #43c0dd, #8b5cf6, #a855f7);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .progress-container {
@@ -113,11 +114,11 @@
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #00FFFF, #32FF32);
+  background: linear-gradient(90deg, #a855f7, #43c0dd);
   border-radius: 10px;
   transition: width 0.3s ease;
   position: relative;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
 }
 
 .progress-fill::after {
@@ -137,10 +138,11 @@
 }
 
 .progress-text {
-  color: #ffffff;
+  color: #a855f7;
+  font-family: 'Orbitron', monospace;
   font-size: 1.2rem;
   font-weight: 600;
-  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.8);
   letter-spacing: 1px;
 }
 

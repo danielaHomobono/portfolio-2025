@@ -13,7 +13,7 @@ const Contact = () => {
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.8 }}
       >
-        Contacto
+        Contáctame
       </motion.h2>
       
       {state.succeeded ? (

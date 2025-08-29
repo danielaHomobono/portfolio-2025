@@ -1,9 +1,11 @@
 /* Hover hint para la imagen - sin fondo */
 .hover-hint {
   margin-top: 20px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Orbitron', monospace;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   color: #a855f7;
   text-align: center;
   text-shadow: 0 0 15px rgba(168, 85, 247, 0.8);

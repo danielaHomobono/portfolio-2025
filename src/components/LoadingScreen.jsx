@@ -63,14 +63,14 @@ const LoadingScreen = ({ onComplete }) => {
           className="logo-letter"
           animate={{ 
             textShadow: [
-              "0 0 20px rgba(0, 255, 255, 0.8)",
-              "0 0 40px rgba(0, 255, 255, 1)",
-              "0 0 20px rgba(0, 255, 255, 0.8)"
+              "0 0 20px rgba(168, 85, 247, 0.8)",
+              "0 0 40px rgba(67, 192, 221, 1)",
+              "0 0 20px rgba(168, 85, 247, 0.8)"
             ]
           }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          D
+          DH
         </motion.div>
       </motion.div>
 

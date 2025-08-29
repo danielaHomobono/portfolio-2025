@@ -52,7 +52,7 @@ const Header = () => {
         
         <nav className={menuOpen ? 'open' : ''}>
           <ul>
-            <li><a href="#about-me" onClick={(e) => handleSmoothScroll(e, '#about-me')}>Acerca de Mí</a></li>
+            <li><a href="#about-me" onClick={(e) => handleSmoothScroll(e, '#about-me')}>Acerca de mí</a></li>
             <li><a href="#what-i-do" onClick={(e) => handleSmoothScroll(e, '#what-i-do')}>¿Qué Hago?</a></li>
             <li><a href="#technologies" onClick={(e) => handleSmoothScroll(e, '#technologies')}>Tecnologías</a></li>
             <li><a href="#projects" onClick={(e) => handleSmoothScroll(e, '#projects')}>Proyectos</a></li>
