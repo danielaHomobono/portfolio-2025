@@ -125,6 +125,32 @@ const Hero = () => {
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
                 </div>
+                <div className="card-hover-info">
+                  <div className="tech-stack">
+                    <h4>Stack:</h4>
+                    <div className="tech-tags">
+                      {i === 0 && ["React", "Node.js", "MongoDB"].map((tech, idx) => (
+                        <span key={idx} className="tech-tag">{tech}</span>
+                      ))}
+                      {i === 1 && ["Kotlin", "C#", "SQLite"].map((tech, idx) => (
+                        <span key={idx} className="tech-tag">{tech}</span>
+                      ))}
+                      {i === 2 && ["AWS", "Docker", "CI/CD"].map((tech, idx) => (
+                        <span key={idx} className="tech-tag">{tech}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="stats">
+                    <div className="stat">
+                      <span className="stat-value">{["Full Stack", "Nativo", "Cloud"][i]}</span>
+                      <span className="stat-label">Enfoque</span>
+                    </div>
+                    <div className="stat">
+                      <span className="stat-value">{["APIs REST", "SQLite", "CI/CD"][i]}</span>
+                      <span className="stat-label">Especialidad</span>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
