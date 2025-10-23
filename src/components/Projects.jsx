@@ -1,12 +1,8 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import ProjectDetails from './ProjectDetails';
 
 const Projects = () => {
   const [ref, isVisible] = useIntersectionObserver();
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   
   const projects = [
     {
@@ -110,7 +106,7 @@ const Projects = () => {
       image: "/assets/img/voraz.png",
       description: "Aplicación para librería creada con Node.js y MongoDB",
       link: "https://el-lector-voraz.onrender.com",
-      github: "https://github.com/danielaHomobono/el-lector-voraz",
+      github: "https://el-lector-voraz.onrender.com",
       color: "#00FFFF",
       techStack: ["Node.js", "MongoDB", "Express", "EJS", "Mongoose", "Bootstrap"],
       challenges: [
@@ -300,20 +296,6 @@ const Projects = () => {
             <h3 style={{ color: project.color }}>{project.title}</h3>
             <p>{project.description}</p>
             <div className="project-actions">
-              <button 
-                className="details-btn"
-                onClick={() => {
-                  setSelectedProject(project);
-                  setIsModalOpen(true);
-                }}
-                style={{ 
-                  background: `linear-gradient(135deg, ${project.color}, ${project.color === "#00FFFF" ? "#0080FF" : 
-                                                                          project.color === "#32FF32" ? "#00FFFF" : 
-                                                                          "#32FF32"})`
-                }}
-              >
-                <i className="fas fa-code"></i> Detalles Técnicos
-              </button>
               <a href={project.link} target="_blank" rel="noopener noreferrer" 
                 style={{ 
                   background: `linear-gradient(135deg, ${project.color}, ${project.color === "#00FFFF" ? "#0080FF" : 
@@ -328,14 +310,7 @@ const Projects = () => {
         ))}
       </div>
       
-      <ProjectDetails 
-        project={selectedProject}
-        isOpen={isModalOpen}
-        onClose={() => {
-          setIsModalOpen(false);
-          setSelectedProject(null);
-        }}
-      />
+
     </section>
   );
 };

@@ -165,7 +165,7 @@ html {
 /* Mobile large */
 @media (max-width: 576px) {
   html {
-    font-size: 70%;
+    font-size: 100%;
   }
   
   header {
@@ -176,11 +176,11 @@ html {
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
   }
   
   nav::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Edge */
+    display: none;
   }
   
   nav ul {
@@ -189,100 +189,134 @@ html {
   }
   
   nav a:link, nav a:visited {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     padding: 0.5rem 1rem;
     white-space: nowrap;
   }
   
   .hero-section {
     padding: 1rem;
-  }
-  
-  .text-content p {
-    font-size: 1.4rem;
+    min-height: auto;
   }
   
   .profile-image,
   .matrix-photo-container,
   .matrix-photo-container img,
   .matrix-canvas {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     box-sizing: border-box;
   }
   
   .welcome-text {
-    margin-top: 10rem !important;
-    z-index: 1 !important;
-    position: relative !important;
+    margin-top: 2rem !important;
   }
   
   .technologies-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
   }
   
   .tech-card {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
   }
   
   .tech-card i {
-    font-size: 4rem;
+    font-size: 2.5rem;
+  }
+  
+  .tech-card h3 {
+    font-size: 1rem;
+  }
+  
+  .project-image-container {
+    height: 200px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    background: rgba(168, 85, 247, 0.1) !important;
+  }
+  
+  .project-image-container img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 1 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
   
   .project-card h3 {
-    font-size: 2.2rem;
+    font-size: 1.2rem !important;
+    padding: 0 1rem;
   }
   
   .project-card p {
-    font-size: 1.8rem;
+    font-size: 0.9rem !important;
+    padding: 0 1rem;
   }
   
   form {
-    padding: 2.5rem;
+    padding: 1.5rem;
   }
   
   .success-message {
-    padding: 3rem 2rem;
+    padding: 2rem 1rem;
+  }
+  
+  /* Desactivar animaciones problemáticas */
+  .highlight {
+    animation: none !important;
+  }
+  
+  .welcome-title {
+    font-size: 1.5rem !important;
   }
 }
 
 /* Mobile small */
 @media (max-width: 375px) {
-  html {
-    font-size: 70%;
-  }
-  
-  .text-content p {
-    font-size: 1.2rem;
-  }
-  
   .profile-image,
   .matrix-photo-container,
   .matrix-photo-container img,
   .matrix-canvas {
     width: 180px;
     height: 180px;
-    border-radius: 50%;
-    box-sizing: border-box;
   }
   
-  .welcome-text {
-    margin-top: 12rem !important;
-    z-index: 1 !important;
-    position: relative !important;
+  .welcome-title {
+    font-size: 1.2rem !important;
   }
   
   .tech-card i {
-    font-size: 3.5rem;
+    font-size: 2rem;
+  }
+  
+  .tech-card h3 {
+    font-size: 0.9rem;
   }
   
   .project-image-container {
-    height: 200px;
+    height: 180px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    background: rgba(168, 85, 247, 0.1) !important;
+  }
+  
+  .project-image-container img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 1 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
   
   form {
-    padding: 2rem;
+    padding: 1rem;
   }
 }

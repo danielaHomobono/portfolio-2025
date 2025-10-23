@@ -165,7 +165,34 @@ main {
   justify-content: center;
   align-items: center;
   position: relative;
-  animation: float 6s ease-in-out infinite;
+}
+
+@media (min-width: 769px) {
+  .profile-image-container {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-image-container {
+    animation: none !important;
+    -webkit-animation: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+  }
+  
+  .profile-image {
+    animation: none !important;
+    -webkit-animation: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+  }
+  
+  .project-image-container img {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 }
 
 /* La animación de la foto es súper divertida, quería que flotara */
@@ -184,10 +211,19 @@ main {
   box-shadow: 0 0 40px rgba(6, 182, 212, 0.8);
 }
 
+@media (max-width: 768px) {
+  .profile-image:hover {
+    transform: none !important;
+    -webkit-transform: none !important;
+  }
+}
+
 @keyframes float {
   0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -20px, 0); }
+  50% { transform: translate3d(0, -10px, 0); }
 }
+
+
 
 /* El resaltado del nombre con un efecto brillante, ¡me encanta! */
 .highlight {
@@ -334,7 +370,12 @@ main {
 .tech-card.animate {
   opacity: 1;
   transform: translateY(0);
-  animation: techFloat 6s ease-in-out infinite;
+}
+
+@media (min-width: 769px) {
+  .tech-card.animate {
+    animation: techFloat 6s ease-in-out infinite;
+  }
 }
 
 .tech-card:nth-child(1).animate { transition-delay: 0.1s; }
@@ -428,7 +469,13 @@ main {
   background: linear-gradient(135deg, #A855F7, #C084FC, #06B6D4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: iconGlow 2s infinite;
+}
+
+@media (max-width: 768px) {
+  .tech-card:hover i {
+    animation: none;
+    transform: scale(1.05);
+  }
 }
 
 
@@ -803,7 +850,12 @@ button:disabled {
 
 .hover-hint:hover {
   background: rgba(139, 92, 246, 0.3);
-  transform: translateX(-50%) translateY(-5px);
+}
+
+@media (min-width: 769px) {
+  .hover-hint:hover {
+    transform: translateX(-50%) translateY(-5px);
+  }
 }
 
 .desktop-text {

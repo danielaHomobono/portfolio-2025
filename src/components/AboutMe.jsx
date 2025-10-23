@@ -3,6 +3,15 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const AboutMe = () => {
   const [ref, isVisible] = useIntersectionObserver();
+  const [statsRef, statsVisible] = useIntersectionObserver({ threshold: 0.3 });
+  const [stat1Ref, stat1Visible] = useIntersectionObserver({ threshold: 0.5 });
+  const [stat2Ref, stat2Visible] = useIntersectionObserver({ threshold: 0.5 });
+  const [stat3Ref, stat3Visible] = useIntersectionObserver({ threshold: 0.5 });
+  const [stat4Ref, stat4Visible] = useIntersectionObserver({ threshold: 0.5 });
+  const [chapter1Ref, chapter1Visible] = useIntersectionObserver({ threshold: 0.4 });
+  const [chapter2Ref, chapter2Visible] = useIntersectionObserver({ threshold: 0.4 });
+  const [chapter3Ref, chapter3Visible] = useIntersectionObserver({ threshold: 0.4 });
+  const [chapter4Ref, chapter4Visible] = useIntersectionObserver({ threshold: 0.4 });
 
   return (
     <section id="about-story" className="about-story-section" ref={ref}>
@@ -27,7 +36,13 @@ const AboutMe = () => {
             animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <div className="story-chapter">
+            <motion.div 
+              className="story-chapter"
+              ref={chapter1Ref}
+              initial={{ opacity: 0, x: -30 }}
+              animate={chapter1Visible ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
               <h3><i className="fas fa-briefcase"></i> Los Inicios: Mundo Administrativo</h3>
               <p>
                 Mi carrera comenzó en el mundo administrativo, donde desarrollé habilidades fundamentales 
@@ -35,9 +50,15 @@ const AboutMe = () => {
                 y <strong>comprensión profunda de procesos empresariales</strong>. Esta experiencia me enseñó 
                 a ver los sistemas desde la perspectiva del usuario final y entender las necesidades reales del negocio.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="story-chapter">
+            <motion.div 
+              className="story-chapter"
+              ref={chapter2Ref}
+              initial={{ opacity: 0, x: -30 }}
+              animate={chapter2Visible ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+            >
               <h3><i className="fas fa-lightbulb"></i> El Momento de Revelación</h3>
               <p>
                 Todo cambió cuando escribí mi primera línea de código. Fue como encontrar el lenguaje 
@@ -45,9 +66,15 @@ const AboutMe = () => {
                 La programación no era solo una herramienta, era mi <strong>forma de pensar</strong> y 
                 <strong>crear soluciones elegantes</strong> a desafíos reales.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="story-chapter">
+            <motion.div 
+              className="story-chapter"
+              ref={chapter3Ref}
+              initial={{ opacity: 0, x: -30 }}
+              animate={chapter3Visible ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+            >
               <h3><i className="fas fa-rocket"></i> La Transición: Aprendizaje Intensivo</h3>
               <p>
                 Decidí hacer la transición completa al desarrollo, combinando mi experiencia administrativa 
@@ -55,9 +82,15 @@ const AboutMe = () => {
                 no solo funcionan técnicamente, sino que realmente <strong>resuelven problemas empresariales</strong> 
                 y mejoran la experiencia del usuario.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="story-chapter">
+            <motion.div 
+              className="story-chapter"
+              ref={chapter4Ref}
+              initial={{ opacity: 0, x: -30 }}
+              animate={chapter4Visible ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+            >
               <h3><i className="fas fa-heart"></i> Mi Pasión Actual</h3>
               <p>
                 Hoy, cada proyecto es una oportunidad para crear algo único que impacte positivamente 
@@ -65,16 +98,17 @@ const AboutMe = () => {
                 y lo que quiero hacer por el resto de mi vida. Mi objetivo es seguir creciendo, 
                 aprendiendo nuevas tecnologías y contribuyendo a proyectos que marquen la diferencia.
               </p>
-            </div>
+            </motion.div>
           </motion.div>
 
-          <motion.div
-            className="story-stats"
-            initial={{ opacity: 0, x: 50 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            <div className="stat-card">
+          <div className="story-stats" ref={statsRef}>
+            <motion.div
+              className="stat-card"
+              ref={stat1Ref}
+              initial={{ opacity: 0, y: 50, scale: 0.8 }}
+              animate={stat1Visible ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.8 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
               <div className="stat-icon">
                 <i className="fas fa-code"></i>
               </div>
@@ -82,9 +116,15 @@ const AboutMe = () => {
                 <span className="stat-number">3+</span>
                 <span className="stat-label">Años Programando</span>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="stat-card">
+            <motion.div
+              className="stat-card"
+              ref={stat2Ref}
+              initial={{ opacity: 0, y: 50, scale: 0.8 }}
+              animate={stat2Visible ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.8 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            >
               <div className="stat-icon">
                 <i className="fab fa-github"></i>
               </div>
@@ -92,9 +132,15 @@ const AboutMe = () => {
                 <span className="stat-number">45+</span>
                 <span className="stat-label">Repositorios GitHub</span>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="stat-card">
+            <motion.div
+              className="stat-card"
+              ref={stat3Ref}
+              initial={{ opacity: 0, y: 50, scale: 0.8 }}
+              animate={stat3Visible ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.8 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            >
               <div className="stat-icon">
                 <i className="fas fa-tools"></i>
               </div>
@@ -102,9 +148,15 @@ const AboutMe = () => {
                 <span className="stat-number">15+</span>
                 <span className="stat-label">Tecnologías Dominadas</span>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="stat-card">
+            <motion.div
+              className="stat-card"
+              ref={stat4Ref}
+              initial={{ opacity: 0, y: 50, scale: 0.8 }}
+              animate={stat4Visible ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.8 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            >
               <div className="stat-icon">
                 <i className="fas fa-graduation-cap"></i>
               </div>
@@ -112,8 +164,8 @@ const AboutMe = () => {
                 <span className="stat-number">∞</span>
                 <span className="stat-label">Ganas de Aprender</span>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
 
         <motion.div

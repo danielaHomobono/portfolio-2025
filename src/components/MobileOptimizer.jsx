@@ -46,18 +46,7 @@ const MobileOptimizer = ({ children }) => {
     }
   }, [isLowEnd, reducedMotion]);
 
-  // Componente de fallback para dispositivos muy limitados
-  if (isLowEnd && isMobile) {
-    return (
-      <div className="mobile-fallback">
-        <div className="fallback-notice">
-          <h3>Versión Optimizada</h3>
-          <p>Se ha cargado una versión optimizada para tu dispositivo</p>
-        </div>
-        {children}
-      </div>
-    );
-  }
+
 
   return children;
 };

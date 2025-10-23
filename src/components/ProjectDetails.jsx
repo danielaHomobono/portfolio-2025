@@ -1,116 +1,153 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
-import CodeShowcase from './CodeShowcase';
+import React from 'react';
 
 const ProjectDetails = ({ project, isOpen, onClose }) => {
-  if (!isOpen) return null;
+  if (!isOpen || !project) return null;
 
   return (
-    <AnimatePresence>
-      <motion.div
-        className="project-modal-overlay"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+    <>
+      {/* Backdrop */}
+      <div 
         onClick={onClose}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.85)',
+          zIndex: 999998
+        }}
+      />
+      
+      {/* Drawer */}
+      <div 
+        style={{
+          position: 'fixed',
+          top: 0,
+          right: 0,
+          bottom: 0,
+          width: '500px',
+          maxWidth: '90vw',
+          backgroundColor: '#1a1a3e',
+          zIndex: 999999,
+          overflowY: 'auto',
+          padding: '30px',
+          boxShadow: '-5px 0 15px rgba(0,0,0,0.3)'
+        }}
       >
-        <motion.div
-          className="project-modal"
-          initial={{ opacity: 0, scale: 0.8, y: 50 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.8, y: 50 }}
-          onClick={(e) => e.stopPropagation()}
+        {/* Close button */}
+        <button 
+          onClick={onClose}
+          style={{
+            position: 'absolute',
+            top: '20px',
+            right: '20px',
+            width: '40px',
+            height: '40px',
+            borderRadius: '50%',
+            border: 'none',
+            backgroundColor: 'rgba(255,255,255,0.1)',
+            color: '#fff',
+            fontSize: '24px',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
         >
-          <button className="modal-close" onClick={onClose}>
-            <i className="fas fa-times"></i>
-          </button>
+          ×
+        </button>
+
+        {/* Content */}
+        <div style={{ marginTop: '60px' }}>
+          <h2 style={{ 
+            color: '#fff', 
+            fontSize: '24px', 
+            marginBottom: '20px',
+            fontWeight: 'bold'
+          }}>
+            {project.title}
+          </h2>
           
-          <div className="modal-content">
-            <div className="modal-header">
-              <img src={project.image} alt={project.title} />
-              <div className="header-info">
-                <h2>{project.title}</h2>
-                <p className="project-summary">{project.description}</p>
-                <div className="project-links">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    <i className="fas fa-external-link-alt"></i> Ver Proyecto
-                  </a>
-                  {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-github"></i> Código
-                    </a>
-                  )}
-                </div>
+          <p style={{ 
+            color: '#fff', 
+            fontSize: '16px', 
+            lineHeight: '1.6',
+            marginBottom: '30px'
+          }}>
+            {project.description}
+          </p>
+          
+          {project.techStack && project.techStack.length > 0 && (
+            <div style={{ marginBottom: '30px' }}>
+              <h3 style={{ 
+                color: '#32FF32', 
+                fontSize: '18px',
+                marginBottom: '15px',
+                fontWeight: 'bold'
+              }}>
+                Stack Técnico
+              </h3>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                {project.techStack.map((tech, index) => (
+                  <span 
+                    key={index}
+                    style={{
+                      backgroundColor: 'rgba(255,255,255,0.1)',
+                      color: '#fff',
+                      padding: '8px 16px',
+                      borderRadius: '20px',
+                      fontSize: '14px'
+                    }}
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
-
-            <div className="modal-body">
-              <div className="tech-section">
-                <h3><i className="fas fa-code"></i> Stack Técnico</h3>
-                <div className="tech-grid">
-                  {project.techStack?.map((tech, index) => (
-                    <span key={index} className="tech-badge" style={{ borderColor: project.color }}>
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="challenges-section">
-                <h3><i className="fas fa-mountain"></i> Retos Técnicos</h3>
-                <ul className="challenges-list">
-                  {project.challenges?.map((challenge, index) => (
-                    <li key={index}>{challenge}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="solutions-section">
-                <h3><i className="fas fa-lightbulb"></i> Soluciones Implementadas</h3>
-                <ul className="solutions-list">
-                  {project.solutions?.map((solution, index) => (
-                    <li key={index}>{solution}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="architecture-section">
-                <h3><i className="fas fa-sitemap"></i> Arquitectura</h3>
-                <p>{project.architecture}</p>
-              </div>
-
-              <div className="learnings-section">
-                <h3><i className="fas fa-graduation-cap"></i> Aprendizajes</h3>
-                <ul className="learnings-list">
-                  {project.learnings?.map((learning, index) => (
-                    <li key={index}>{learning}</li>
-                  ))}
-                </ul>
-              </div>
-
-              {project.performance && (
-                <div className="performance-section">
-                  <h3><i className="fas fa-tachometer-alt"></i> Rendimiento</h3>
-                  <div className="performance-metrics">
-                    {Object.entries(project.performance).map(([key, value]) => (
-                      <div key={key} className="metric">
-                        <span className="metric-label">{key}</span>
-                        <span className="metric-value">{value}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-              
-              <div className="code-section">
-                <h3><i className="fas fa-code"></i> Código y Arquitectura</h3>
-                <CodeShowcase project={project} />
-              </div>
-            </div>
+          )}
+          
+          <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+            {project.githubUrl && (
+              <a 
+                href={project.githubUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{
+                  backgroundColor: '#00FFFF',
+                  color: '#000',
+                  padding: '12px 24px',
+                  borderRadius: '25px',
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  fontSize: '14px'
+                }}
+              >
+                GitHub
+              </a>
+            )}
+            {project.liveUrl && (
+              <a 
+                href={project.liveUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{
+                  backgroundColor: '#32FF32',
+                  color: '#000',
+                  padding: '12px 24px',
+                  borderRadius: '25px',
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  fontSize: '14px'
+                }}
+              >
+                Ver Proyecto
+              </a>
+            )}
           </div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
+        </div>
+      </div>
+    </>
   );
 };
 

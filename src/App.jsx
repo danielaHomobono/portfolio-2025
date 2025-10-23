@@ -8,12 +8,12 @@ import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
-import DeveloperModeEasterEgg from './components/DeveloperModeEasterEgg'
+
 import GSAPAnimations from './components/GSAPAnimations'
 import TextReveal from './components/TextReveal'
 import MobileOptimizer from './components/MobileOptimizer'
 import { useScrollOptimization } from './hooks/useScrollOptimization'
-import foto from './assets/img/foto3.jpeg'
+
 import './styles/reset.css'
 import './styles/styles.css'
 import './styles/responsive.css'
@@ -29,8 +29,6 @@ import './styles/matrix-photo.css'
 import './styles/hover-hint.css'
 import './styles/text-reveal.css'
 import './styles/creative-fonts.css'
-import './styles/performance.css'
-import './styles/project-details.css'
 import './styles/project-actions.css'
 import './styles/about-story.css'
 import './styles/mobile-optimizer.css'
@@ -38,6 +36,7 @@ import './styles/code-showcase.css'
 import './styles/unified-titles.css'
 import './styles/hero-ctas.css'
 import './styles/hero-intro.css'
+
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -70,6 +69,7 @@ function App() {
           </MobileOptimizer>
         )}
       </AnimatePresence>
+
     </>
   )
 }

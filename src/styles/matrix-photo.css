@@ -29,8 +29,10 @@
   opacity: 0.7;
   z-index: 0;
 }
-.matrix-photo-container {
-  animation: float 6s ease-in-out infinite;
+@media (min-width: 769px) {
+  .matrix-photo-container {
+    animation: float 6s ease-in-out infinite;
+  }
 }
 
 
@@ -115,6 +117,21 @@
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.6; }
+}
+
+@media (max-width: 768px) {
+  .matrix-photo-container {
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .matrix-photo-container:hover {
+    transform: none !important;
+  }
+  
+  .hover-text {
+    animation: none !important;
+  }
 }
 
 @keyframes bounce {
