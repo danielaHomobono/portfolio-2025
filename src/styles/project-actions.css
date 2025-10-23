@@ -1,0 +1,48 @@
+/* Project Actions Styles */
+.project-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+}
+
+.project-card a,
+.details-btn {
+  background: linear-gradient(135deg, #00FFFF, #0080FF);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9em;
+  flex: 1;
+  justify-content: center;
+  min-width: 140px;
+  font-family: 'Inter', sans-serif;
+}
+
+.project-card a:hover,
+.details-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .project-actions {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  
+  .project-card a,
+  .details-btn {
+    flex: none;
+    width: 100%;
+  }
+}

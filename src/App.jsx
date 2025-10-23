@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import AboutMe from './components/AboutMe'
 import Technologies from './components/Technologies'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
@@ -10,6 +11,7 @@ import LoadingScreen from './components/LoadingScreen'
 import DeveloperModeEasterEgg from './components/DeveloperModeEasterEgg'
 import GSAPAnimations from './components/GSAPAnimations'
 import TextReveal from './components/TextReveal'
+import MobileOptimizer from './components/MobileOptimizer'
 import { useScrollOptimization } from './hooks/useScrollOptimization'
 import foto from './assets/img/foto3.jpeg'
 import './styles/reset.css'
@@ -28,6 +30,14 @@ import './styles/hover-hint.css'
 import './styles/text-reveal.css'
 import './styles/creative-fonts.css'
 import './styles/performance.css'
+import './styles/project-details.css'
+import './styles/project-actions.css'
+import './styles/about-story.css'
+import './styles/mobile-optimizer.css'
+import './styles/code-showcase.css'
+import './styles/unified-titles.css'
+import './styles/hero-ctas.css'
+import './styles/hero-intro.css'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -43,18 +53,21 @@ function App() {
         {isLoading ? (
           <LoadingScreen key="loading" onComplete={handleLoadingComplete} />
         ) : (
-          <div key="main">
-            <GSAPAnimations />
-            <TextReveal />
-            <Header />
-            <main>
-              <Hero />
-              <Technologies />
-              <Projects />
-              <Contact />
-            </main>
-            <Footer />
-          </div>
+          <MobileOptimizer>
+            <div key="main">
+              <GSAPAnimations />
+              <TextReveal />
+              <Header />
+              <main>
+                <Hero />
+                <AboutMe />
+                <Technologies />
+                <Projects />
+                <Contact />
+              </main>
+              <Footer />
+            </div>
+          </MobileOptimizer>
         )}
       </AnimatePresence>
     </>

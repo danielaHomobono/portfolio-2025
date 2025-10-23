@@ -1,0 +1,102 @@
+/* Mobile Optimizer Styles */
+.mobile-fallback {
+  position: relative;
+}
+
+.fallback-notice {
+  background: rgba(168, 85, 247, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.fallback-notice h3 {
+  color: #00FFFF;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.fallback-notice p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Optimizaciones para dispositivos de baja potencia */
+@media (max-width: 768px) and (max-resolution: 150dpi) {
+  /* Reducir calidad de imágenes en dispositivos de baja resolución */
+  .project-image-container img,
+  .profile-image {
+    image-rendering: optimizeSpeed;
+    image-rendering: -webkit-optimize-contrast;
+  }
+  
+  /* Simplificar gradientes */
+  .tech-card,
+  .mission-card,
+  .project-card {
+    background: rgba(168, 85, 247, 0.05) !important;
+  }
+  
+  /* Desactivar efectos complejos */
+  .tech-card:hover,
+  .mission-card:hover,
+  .project-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Optimizaciones para conexiones lentas */
+@media (max-width: 480px) {
+  .project-image-container {
+    background: rgba(168, 85, 247, 0.1);
+  }
+  
+  .project-image-container img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .project-image-container img.loaded {
+    opacity: 1;
+  }
+}
+
+/* Reducir animaciones para usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .aurora-canvas,
+  .matrix-canvas {
+    display: none !important;
+  }
+}
+
+/* Optimizaciones para dispositivos con poca memoria */
+@media (max-width: 768px) and (max-device-memory: 2GB) {
+  .tech-card::before,
+  .mission-card::before,
+  .project-card::before {
+    display: none !important;
+  }
+  
+  .profile-image {
+    filter: none !important;
+  }
+  
+  .aurora-canvas {
+    display: none !important;
+  }
+}

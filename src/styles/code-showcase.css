@@ -1,0 +1,156 @@
+/* Code Showcase Styles */
+.code-showcase {
+  margin-top: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.code-tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.code-tabs button {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9em;
+  font-weight: 500;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.code-tabs button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.code-tabs button.active {
+  background: rgba(168, 85, 247, 0.2);
+  color: #00FFFF;
+  border-bottom: 2px solid #00FFFF;
+}
+
+.code-content {
+  position: relative;
+}
+
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.language {
+  color: #32FF32;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.copy-btn {
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8em;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.copy-btn:hover {
+  background: rgba(168, 85, 247, 0.3);
+  transform: translateY(-1px);
+}
+
+.code-block {
+  margin: 0;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  color: #f8f8f2;
+  font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+  font-size: 0.85em;
+  line-height: 1.6;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.code-block code {
+  color: inherit;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Syntax highlighting simulation */
+.code-block {
+  /* Keywords */
+  --keyword-color: #ff79c6;
+  /* Strings */
+  --string-color: #f1fa8c;
+  /* Comments */
+  --comment-color: #6272a4;
+  /* Functions */
+  --function-color: #50fa7b;
+  /* Variables */
+  --variable-color: #8be9fd;
+}
+
+/* Simple syntax highlighting with regex-like approach */
+.code-block code::before {
+  content: '';
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .code-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .code-tabs button {
+    flex: 1;
+    min-width: 120px;
+    padding: 0.8rem 1rem;
+    font-size: 0.8em;
+  }
+  
+  .code-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .code-block {
+    font-size: 0.75em;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .code-tabs button {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.75em;
+  }
+  
+  .code-block {
+    font-size: 0.7em;
+    line-height: 1.4;
+  }
+}

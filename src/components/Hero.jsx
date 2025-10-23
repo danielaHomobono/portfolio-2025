@@ -10,14 +10,22 @@ const Hero = () => {
   const containerRef = useGSAP()
   const { isLowEnd } = useDeviceDetection()
   
+  const handleSmoothScroll = (e, targetId) => {
+    e.preventDefault();
+    document.querySelector(targetId)?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+  
   return (
     <section id="about-me" className="hero-section" ref={containerRef}>
       {!isLowEnd && (
         <Aurora
-          colorStops={["#8b5cf6", "#43c0dd", "#a855f7"]}
-          blend={0.7}
-          amplitude={1.2}
-          speed={0.3}
+          colorStops={["#0891b2", "#43c0dd", "#a855f7"]}
+          blend={1.1}
+          amplitude={2.2}
+          speed={0.45}
         />
       )}
       <div className="hero-content">
@@ -31,13 +39,26 @@ const Hero = () => {
             <h2 className="spectacular-title">
               ¡HOLA!
             </h2>
-            <motion.p
+            <motion.div
+              className="hero-intro"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 1 }}
             >
-              Soy <span className="highlight" style={{fontSize: '1.4em', fontWeight: 'bold', textShadow: '0 0 10px rgba(139, 92, 246, 0.8)'}}>Daniela Homobono</span>, Full Stack Developer de Río Tercero, Córdoba. Desde que escribí mi primera línea de código, supe que había encontrado mi verdadera pasión. Cada proyecto es una oportunidad para crear algo único que resuelva problemas reales. Me fascina el proceso creativo de transformar ideas en experiencias digitales que impacten positivamente en las personas. La programación no es solo mi profesión, es mi forma de expresión y lo que quiero hacer por el resto de mi vida.
-            </motion.p>
+              <p className="intro-main">
+                Soy <span className="highlight" style={{fontSize: '1.4em', fontWeight: 'bold', textShadow: '0 0 10px rgba(139, 92, 246, 0.8)'}}>Daniela Homobono</span>, Full Stack Developer de Río Tercero, Córdoba.
+              </p>
+              
+              <motion.p
+                className="intro-summary"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.0, duration: 0.8 }}
+              >
+                Transformo ideas en experiencias digitales que resuelven problemas reales. 
+                La programación es mi pasión y forma de expresión.
+              </motion.p>
+            </motion.div>
             <motion.div
               className="welcome-text"
               initial={{ opacity: 0, scale: 0.5, y: 50, rotateX: 90 }}
@@ -50,9 +71,23 @@ const Hero = () => {
                 bounce: 0.4
               }}
             >
-              <span className="highlight" style={{fontSize: '2.2em', fontWeight: '700', display: 'block', marginTop: '1.5rem', letterSpacing: '2px', fontFamily: 'Orbitron, monospace', textTransform: 'uppercase'}}>
+              <span className="highlight welcome-title">
                 ¡BIENVENIDOS A MI MUNDO DIGITAL!
               </span>
+            </motion.div>
+            
+            <motion.div
+              className="hero-ctas"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 3.2, duration: 0.8 }}
+            >
+              <a href="#projects" className="cta-primary" onClick={(e) => handleSmoothScroll(e, '#projects')}>
+                Ver Proyectos
+              </a>
+              <a href="#contact" className="cta-secondary" onClick={(e) => handleSmoothScroll(e, '#contact')}>
+                Contactar
+              </a>
             </motion.div>
           </div>
           <motion.div 
@@ -73,7 +108,7 @@ const Hero = () => {
               transition={{ delay: 2.5, duration: 0.8 }}
             >
               <span className="hover-text">
-                <span className="desktop-text">Hover the picture</span>
+                <span className="">Hover the picture</span>
                 <span className="mobile-text">Click the picture</span>
               </span>
             </motion.div>

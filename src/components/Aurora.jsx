@@ -114,9 +114,10 @@ export default function Aurora(props) {
   const {
     colorStops = ["#6366F1", "#06B6D4", "#8B5CF6"],
     amplitude = 1.0,
-    blend = 0.5
+    blend = 0.5,
+    speed = 0.3
   } = props;
-  
+
   // Detectar si es dispositivo móvil para ajustar colores
   const isMobile = window.innerWidth <= 768;
   const propsRef = useRef(props);
@@ -157,11 +158,11 @@ export default function Aurora(props) {
       delete geometry.attributes.uv;
     }
 
-    // Ajustar colores para móvil (verde más suave)
-    const mobileColorStops = isMobile ? 
-      ["#6366F1", "#06B6D4", "#6366F1"] : // Celeste turquesa para móvil
-      colorStops;
-      
+    // Ajustar colores para móvil (más suave)
+    const mobileColorStops = isMobile
+      ? ["#6366F1", "#06B6D4", "#6366F1"] // Mobile: celeste turquesa
+      : colorStops;
+
     const colorStopsArray = mobileColorStops.map((hex) => {
       const c = new Color(hex);
       return [c.r, c.g, c.b];
@@ -186,18 +187,19 @@ export default function Aurora(props) {
     const update = (t) => {
       animateId = requestAnimationFrame(update);
       const { time = t * 0.01, speed = 1.0 } = propsRef.current;
-      program.uniforms.uTime.value = time * speed * 0.1;
-      // Reducir la amplitud en dispositivos móviles para un efecto más sutil
-      program.uniforms.uAmplitude.value = isMobile ? 
-        (propsRef.current.amplitude ?? 1.0) * 0.7 : // Reducir amplitud en móviles
-        (propsRef.current.amplitude ?? 1.0);
-      program.uniforms.uBlend.value = propsRef.current.blend ?? blend;
+      program.uniforms.uTime.value = time * (propsRef.current.speed ?? speed) * 0.1;
+      // Desktop: valores intensos, Mobile: más suave
+      program.uniforms.uAmplitude.value = isMobile
+        ? (propsRef.current.amplitude ?? 1.0) * 0.7
+        : (propsRef.current.amplitude ?? 1.0);
+      program.uniforms.uBlend.value = isMobile
+        ? (propsRef.current.blend ?? blend) * 0.7
+        : (propsRef.current.blend ?? blend);
       // Usar colores ajustados para móvil
       const stops = propsRef.current.colorStops ?? colorStops;
-      const adjustedStops = isMobile ? 
-        ["#6366F1", "#06B6D4", "#6366F1"] : // Celeste turquesa para móvil
-        stops;
-        
+      const adjustedStops = isMobile
+        ? ["#6366F1", "#06B6D4", "#6366F1"]
+        : stops;
       program.uniforms.uColorStops.value = adjustedStops.map((hex) => {
         const c = new Color(hex);
         return [c.r, c.g, c.b];

@@ -1,0 +1,45 @@
+/* Hero Intro Styles */
+.hero-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.intro-main {
+  font-size: 1.7rem;
+  line-height: 1.7;
+  color: #CBD5E1;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.intro-summary {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  font-weight: 400;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-title {
+  font-size: 2.2em !important;
+  font-weight: 700 !important;
+  display: block !important;
+  margin-top: 1.5rem !important;
+  letter-spacing: 2px !important;
+  font-family: 'Orbitron', monospace !important;
+  text-transform: uppercase !important;
+}
+
+@media (max-width: 768px) {
+  .intro-main {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .intro-summary {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
