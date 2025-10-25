@@ -108,7 +108,7 @@ const Hero = () => {
               transition={{ delay: 2.5, duration: 0.8 }}
             >
               <span className="hover-text">
-                <span className="">Hover the picture</span>
+                <span className="desktop-text">Hover the picture</span>
                 <span className="mobile-text">Click the picture</span>
               </span>
             </motion.div>
