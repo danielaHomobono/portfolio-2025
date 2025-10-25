@@ -1,5 +1,10 @@
 /* Creative Typography - Despampanante! */
 
+/* ¡HOLA! - Space Grotesk (igual que otros títulos) */
+.spectacular-title {
+  font-family: 'Space Grotesk', sans-serif !important;
+}
+
 /* Daniela Homobono - Orbitron (Futurista) */
 .highlight {
   font-family: 'Orbitron', monospace !important;
@@ -15,9 +20,9 @@
   animation: techGlow 3s ease-in-out infinite alternate;
 }
 
-/* Bienvenidos a mi mundo digital - Space Grotesk */
+/* Bienvenidos a mi mundo digital - Orbitron */
 .welcome-text .highlight {
-  font-family: 'Space Grotesk', sans-serif !important;
+  font-family: 'Orbitron', monospace !important;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: none;

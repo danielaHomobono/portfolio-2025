@@ -15,11 +15,27 @@ export const useGSAP = () => {
         const profileImg = document.querySelector('.profile-image')
         const highlights = document.querySelectorAll('.highlight')
         
+        // Title animation - impactante sin caída ni rebote
         if (title) {
           gsap.fromTo(title, 
-            { y: 100, opacity: 0, rotationX: 90 },
-            { y: 0, opacity: 1, rotationX: 0, duration: 1.2, ease: 'back.out(1.7)' }
+            { scale: 0.7, opacity: 0 },
+            { 
+              scale: 1, 
+              opacity: 1,
+              duration: 0.8,
+              ease: 'power3.out'
+            }
           )
+          
+          // Pulso continuo después de aparecer
+          gsap.to(title, {
+            textShadow: '0 0 25px rgba(0, 255, 255, 1), 0 0 35px rgba(168, 85, 247, 0.8)',
+            duration: 1.5,
+            yoyo: true,
+            repeat: -1,
+            ease: 'power1.inOut',
+            delay: 1
+          })
         }
 
         if (profileImg) {

@@ -265,7 +265,7 @@ main {
 }
 
 .mission-card {
-  padding: 2.5rem;
+  padding: 2rem;
   border-radius: 20px;
   background: transparent;
   transition: all 0.4s ease;
@@ -274,37 +274,60 @@ main {
   position: relative;
   overflow: hidden;
   opacity: 0.9;
-  min-height: 350px;
+  min-height: 280px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .mission-card:hover {
   background: rgba(139, 92, 246, 0.2);
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 -15px 30px rgba(168, 85, 247, 0.4);
   border-color: rgba(139, 92, 246, 0.2);
+}
+
+@media (max-width: 768px) {
+  .mission-card {
+    border: 2px solid rgba(168, 85, 247, 0.4);
+    background: rgba(168, 85, 247, 0.08);
+    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.2);
+  }
+  
+  .mission-card:active {
+    background: rgba(139, 92, 246, 0.25) !important;
+    border-color: rgba(67, 192, 221, 0.8) !important;
+  }
+  
+  .mission-card:active i {
+    color: #43c0dd !important;
+    transform: scale(1.15) !important;
+  }
 }
 
 /* Efecto de brillo en las tarjetas, ¡me encanta cómo quedó! */
 .mission-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
+  top: -100%;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.8s ease;
+  background: linear-gradient(180deg, rgba(168, 85, 247, 0.3) 0%, transparent 60%);
+  transition: all 0.5s ease;
+  opacity: 0;
 }
 
 .mission-card:hover::before {
-  left: 100%;
+  top: 0;
+  opacity: 1;
 }
 
 .mission-card i {
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: #8b5cf6;
-  margin-bottom: 1.5rem;
-  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  transition: all 0.15s ease;
+  will-change: transform, color;
 }
 
 .mission-card:hover i {
@@ -314,15 +337,15 @@ main {
 
 .mission-card h3 {
   color: #F8FAFC;
-  margin-bottom: 2rem;
-  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
 .mission-card p {
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1.5rem;
-  line-height: 1.8;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 /*///// SECCIÓN TECNOLOGÍAS /////*/

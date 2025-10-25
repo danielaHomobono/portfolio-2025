@@ -154,6 +154,11 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.8 + i * 0.2, duration: 0.6 }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                whileTap={{ 
+                  scale: 0.95,
+                  boxShadow: "0 5px 15px rgba(168, 85, 247, 0.6)",
+                  transition: { duration: 0.1 }
+                }}
               >
                 <div className="card-content">
                   <i className={item.icon} aria-hidden="true"></i>

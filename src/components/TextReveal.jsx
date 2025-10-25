@@ -16,61 +16,13 @@ const TextReveal = () => {
           .join('')
       }
 
-      // Apply only to specific titles
-      const headings = document.querySelectorAll('.spectacular-title')
-      headings.forEach(splitText)
+      // TextReveal disabled - causing font issues
+      // const holaTitle = document.querySelector('.spectacular-title')
+      // if (holaTitle && !holaTitle.querySelector('.char')) {
+      //   splitText(holaTitle)
+      // }
 
-      // Animate letters with stagger
-      gsap.set('.char', { opacity: 0, y: 30, rotationX: 30 })
-      gsap.to('.char', {
-        opacity: 1,
-        y: 0,
-        rotationX: 0,
-        duration: 0.5,
-        stagger: 0.02,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: '.spectacular-title',
-          start: 'top 80%',
-          toggleActions: 'play none none none'
-        }
-      })
-
-      // Glow trail effect
-      gsap.to('.char', {
-        textShadow: '0 0 20px rgba(168, 85, 247, 0.8), 0 0 40px rgba(168, 85, 247, 0.6)',
-        duration: 0.3,
-        stagger: 0.05,
-        yoyo: true,
-        repeat: 1,
-        delay: 1,
-        scrollTrigger: {
-          trigger: '.spectacular-title',
-          start: 'top 80%',
-          toggleActions: 'play none none none'
-        }
-      })
-
-      // Wave effect on hover
-      const addWaveEffect = () => {
-        const titles = document.querySelectorAll('.spectacular-title')
-        
-        titles.forEach(title => {
-          title.addEventListener('mouseenter', () => {
-            const chars = title.querySelectorAll('.char')
-            gsap.to(chars, {
-              y: -10,
-              duration: 0.3,
-              stagger: 0.02,
-              ease: 'power2.out',
-              yoyo: true,
-              repeat: 1
-            })
-          })
-        })
-      }
-
-      setTimeout(addWaveEffect, 2000)
+      // TextReveal animations disabled - using GSAP in useGSAP hook instead
 
     }, 1000)
 

@@ -19,10 +19,14 @@
 }
 
 .spectacular-title .char {
-  background: linear-gradient(135deg, #a855f7, #43c0dd);
+  background: linear-gradient(135deg, #00FFFF, #0080FF, #32FF32);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-family: 'Orbitron', monospace !important;
+  font-weight: 700 !important;
+  font-size: inherit !important;
+  letter-spacing: inherit !important;
 }
 
 /* Glow animation */
