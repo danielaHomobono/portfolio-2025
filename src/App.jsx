@@ -36,6 +36,7 @@ import './styles/code-showcase.css'
 import './styles/unified-titles.css'
 import './styles/hero-ctas.css'
 import './styles/hero-intro.css'
+import './styles/modal.css'
 
 
 function App() {
