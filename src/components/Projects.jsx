@@ -322,6 +322,7 @@ const Projects = () => {
                   src={project.image} 
                   alt={`Captura de pantalla del proyecto ${project.title} - ${project.description.substring(0, 100)}...`}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <h3 style={{ color: project.color }}>{project.title}</h3>
@@ -361,20 +362,26 @@ const Projects = () => {
       </section>
       
       {selectedProject && (
-        <div style={{
-          position: 'absolute',
-          top: window.scrollY + 'px',
-          left: '0',
-          width: '100vw',
-          height: '100vh',
-          backgroundColor: 'rgba(0,0,0,0.9)',
-          zIndex: '9999999',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '20px',
-          WebkitOverflowScrolling: 'touch'
-        }}>
+        <div 
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setSelectedProject(null);
+            }
+          }}
+          style={{
+            position: 'absolute',
+            top: window.scrollY + 'px',
+            left: '0',
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0,0,0,0.9)',
+            zIndex: 9999999,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '20px',
+            WebkitOverflowScrolling: 'touch'
+          }}>
           <div style={{
             background: 'linear-gradient(135deg, rgba(248, 250, 252, 0.95), rgba(241, 245, 249, 0.95))',
             backdropFilter: 'blur(20px)',
