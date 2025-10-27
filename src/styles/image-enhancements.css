@@ -1,0 +1,80 @@
+/* Mejoras profesionales para imágenes de proyectos */
+.project-image-container {
+  position: relative;
+  isolation: isolate;
+}
+
+.project-image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(67, 192, 221, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.project-card:hover .project-image-container::before {
+  opacity: 1;
+}
+
+/* Fallback para imágenes que no cargan */
+.project-image-container .image-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Optimización para diferentes tipos de imágenes */
+.project-image-container .optimized-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Mejora del placeholder */
+.project-image-container .image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+}
+
+/* Animación suave para el hover */
+.project-card:hover .project-image-container .optimized-image {
+  transform: scale(1.02);
+}
+
+/* Responsive mejorado */
+@media (max-width: 1024px) {
+  .project-image-container {
+    aspect-ratio: 3/2;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-image-container {
+    aspect-ratio: 4/3;
+  }
+  
+  .project-card:hover .project-image-container .optimized-image {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-image-container {
+    aspect-ratio: 16/10;
+  }
+}

@@ -1,0 +1,172 @@
+/* Modal animations and responsive styles */
+@keyframes modalFadeIn {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999999;
+  
+  /* Usar viewport height dinámico */
+  height: calc(var(--vh, 1vh) * 100);
+  
+  /* Background mejorado */
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  
+  /* Safe area insets */
+  padding: max(20px, env(safe-area-inset-top)) 
+           max(20px, env(safe-area-inset-right)) 
+           max(20px, env(safe-area-inset-bottom)) 
+           max(20px, env(safe-area-inset-left));
+  
+  /* Centrado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Animación */
+  opacity: 0;
+  animation: modalFadeIn 0.2s ease-out forwards;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #1a1a3e 0%, #2d1b69 50%, #4c1d95 100%);
+  border-radius: 20px;
+  
+  /* Dimensiones base */
+  width: 100%;
+  max-width: 90vw;
+  max-height: 85vh;
+  
+  /* Scroll interno */
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  
+  /* Espaciado */
+  padding: 30px;
+  
+  /* Styling */
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.5), 
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  
+  /* Animación */
+  transform: scale(0.9) translateY(20px);
+  animation: modalSlideIn 0.3s ease-out 0.1s forwards;
+  
+  /* Posición relativa para botón cerrar */
+  position: relative;
+}
+
+/* Desktop */
+@media screen and (min-width: 1025px) {
+  .modal-content {
+    max-width: 800px;
+    max-height: 90vh;
+    padding: 40px;
+  }
+}
+
+/* Tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .modal-content {
+    max-width: 600px;
+    padding: 35px;
+  }
+}
+
+/* Mobile landscape */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .modal-overlay {
+    padding: max(10px, env(safe-area-inset-top)) 
+             max(10px, env(safe-area-inset-right)) 
+             max(10px, env(safe-area-inset-bottom)) 
+             max(10px, env(safe-area-inset-left));
+  }
+  
+  .modal-content {
+    max-width: 85vw;
+    max-height: 80vh;
+    padding: 20px 25px;
+  }
+}
+
+/* Dispositivos pequeños */
+@media screen and (max-width: 400px) {
+  .modal-content {
+    padding: 20px;
+    border-radius: 15px;
+  }
+}
+
+/* Altura muy pequeña */
+@media screen and (max-height: 500px) {
+  .modal-overlay {
+    align-items: flex-start;
+    padding-top: max(10px, env(safe-area-inset-top));
+  }
+  
+  .modal-content {
+    margin-top: 0;
+    max-height: calc(100vh - 20px);
+  }
+}
+
+/* Scrollbar personalizado */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Reducir animaciones si se prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay,
+  .modal-content {
+    animation: none;
+  }
+  
+  .modal-overlay {
+    opacity: 1;
+  }
+  
+  .modal-content {
+    transform: none;
+  }
+}

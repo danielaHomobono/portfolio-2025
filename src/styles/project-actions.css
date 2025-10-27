@@ -8,7 +8,8 @@
 }
 
 .project-card a,
-.details-btn {
+.details-btn,
+.details-button {
   background: linear-gradient(135deg, #00FFFF, #0080FF);
   color: white;
   padding: 12px 20px;
@@ -29,7 +30,8 @@
 }
 
 .project-card a:hover,
-.details-btn:hover {
+.details-btn:hover,
+.details-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
 }
@@ -41,7 +43,8 @@
   }
   
   .project-card a,
-  .details-btn {
+  .details-btn,
+  .details-button {
     flex: none;
     width: 100%;
   }

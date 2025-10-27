@@ -1,0 +1,62 @@
+/* Brillo superior y lateral derecho */
+
+.project-card {
+  position: relative;
+}
+
+/* Brillo superior */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    rgba(168, 85, 247, 0.6) 0%,
+    rgba(67, 192, 221, 0.8) 50%,
+    rgba(168, 85, 247, 0.6) 100%
+  );
+  border-radius: 20px 20px 0 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* Brillo lateral derecho */
+.project-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, 
+    rgba(67, 192, 221, 0.8) 0%,
+    rgba(168, 85, 247, 0.6) 100%
+  );
+  border-radius: 0 20px 20px 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* Efectos en hover */
+.project-card:hover::before {
+  opacity: 1;
+  height: 3px;
+  box-shadow: 0 0 10px rgba(67, 192, 221, 0.4);
+}
+
+.project-card:hover::after {
+  opacity: 1;
+  width: 3px;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-card:hover::before,
+  .project-card:hover::after {
+    opacity: 0.7;
+    box-shadow: none;
+  }
+}

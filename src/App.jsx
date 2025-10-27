@@ -8,6 +8,7 @@ import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
+import ProjectDetails from './components/ProjectDetails'
 
 import GSAPAnimations from './components/GSAPAnimations'
 import TextReveal from './components/TextReveal'
@@ -36,15 +37,28 @@ import './styles/code-showcase.css'
 import './styles/unified-titles.css'
 import './styles/hero-ctas.css'
 import './styles/hero-intro.css'
-import './styles/modal.css'
+import './styles/project-modal.css'
 
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
   useScrollOptimization();
   
   const handleLoadingComplete = () => {
     setIsLoading(false);
+  };
+  
+  const handleOpenModal = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+  
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
   };
   
   return (
@@ -62,7 +76,7 @@ function App() {
                 <Hero />
                 <AboutMe />
                 <Technologies />
-                <Projects />
+                <Projects onOpenModal={handleOpenModal} />
                 <Contact />
               </main>
               <Footer />
@@ -70,7 +84,13 @@ function App() {
           </MobileOptimizer>
         )}
       </AnimatePresence>
-
+      
+      {/* Modal fuera del AnimatePresence para evitar conflictos */}
+      <ProjectDetails 
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </>
   )
 }

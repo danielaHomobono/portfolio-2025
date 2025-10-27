@@ -1,0 +1,40 @@
+/* Tata Clothe - forzar que ocupe todo el contenedor */
+.project-image-container img[src*="ecommerce"] {
+  object-fit: cover !important;
+  object-position: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+.project-image-container:has(img[src*="ecommerce"]) {
+  position: relative !important;
+  background: transparent !important;
+}
+
+/* Avatar - mostrar imagen completa sin cortes */
+.project-image-container img[src*="porfolio2"] {
+  object-fit: contain !important;
+  object-position: center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Hover effects */
+.project-card:hover .project-image-container img[src*="ecommerce"] {
+  transform: scale(1.05) !important;
+}
+
+.project-card:hover .project-image-container img[src*="porfolio2"] {
+  transform: scale(1.02) !important;
+}
+
+/* Mobile - sin efectos */
+@media (max-width: 768px) {
+  .project-card:hover .project-image-container img[src*="ecommerce"],
+  .project-card:hover .project-image-container img[src*="porfolio2"] {
+    transform: none !important;
+  }
+}

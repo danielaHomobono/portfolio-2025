@@ -1,0 +1,197 @@
+/* ModalPortal.css - Estilos optimizados para móviles */
+
+.modal-portal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999999;
+  
+  /* Usar --vh dinámico en lugar de 100vh */
+  height: calc(var(--vh, 1vh) * 100);
+  
+  /* Background con backdrop-filter para mejor UX */
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  
+  /* Safe area insets para dispositivos con notch */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  
+  /* Flexbox para centrar contenido */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Padding base */
+  padding: max(20px, env(safe-area-inset-top)) 
+           max(20px, env(safe-area-inset-right)) 
+           max(20px, env(safe-area-inset-bottom)) 
+           max(20px, env(safe-area-inset-left));
+  
+  /* Animación suave de entrada */
+  opacity: 0;
+  animation: modal-fade-in 0.2s ease-out forwards;
+}
+
+.modal-portal-content {
+  background: linear-gradient(135deg, #1a1a3e 0%, #2d1b69 50%, #4c1d95 100%);
+  border-radius: 20px;
+  
+  /* Dimensiones responsive */
+  width: 100%;
+  max-width: 500px;
+  max-height: 85vh;
+  
+  /* Scroll interno si es necesario */
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling en iOS */
+  
+  /* Espaciado interno */
+  padding: 30px;
+  
+  /* Styling visual */
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  
+  /* Animación de entrada */
+  transform: scale(0.9) translateY(20px);
+  animation: modal-slide-in 0.3s ease-out 0.1s forwards;
+}
+
+/* Animaciones */
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-slide-in {
+  from {
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Tablets en portrait */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .modal-portal-content {
+    max-width: 600px;
+    padding: 40px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1025px) {
+  .modal-portal-content {
+    max-width: 800px;
+    max-height: 90vh;
+    padding: 40px;
+  }
+}
+
+/* Orientación landscape en móviles */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .modal-portal-overlay {
+    /* Usar más espacio horizontal en landscape */
+    padding: max(10px, env(safe-area-inset-top)) 
+             max(10px, env(safe-area-inset-right)) 
+             max(10px, env(safe-area-inset-bottom)) 
+             max(10px, env(safe-area-inset-left));
+  }
+  
+  .modal-portal-content {
+    max-width: 85vw;
+    max-height: 80vh;
+    padding: 20px 30px;
+    
+    /* Ajustar scroll para landscape */
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+/* Dispositivos muy pequeños */
+@media screen and (max-width: 360px) {
+  .modal-portal-content {
+    padding: 20px;
+    border-radius: 15px;
+    max-height: 80vh;
+  }
+}
+
+/* Dispositivos con altura muy pequeña (landscape en móviles pequeños) */
+@media screen and (max-height: 500px) {
+  .modal-portal-overlay {
+    padding: 10px;
+    align-items: flex-start;
+    padding-top: max(10px, env(safe-area-inset-top));
+  }
+  
+  .modal-portal-content {
+    max-height: calc(100vh - 20px);
+    margin-top: 0;
+  }
+}
+
+/* Estilos para modo oscuro del sistema */
+@media (prefers-color-scheme: dark) {
+  .modal-portal-overlay {
+    background: rgba(0, 0, 0, 0.95);
+  }
+}
+
+/* Reducir animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .modal-portal-overlay,
+  .modal-portal-content {
+    animation: none;
+  }
+  
+  .modal-portal-overlay {
+    opacity: 1;
+  }
+  
+  .modal-portal-content {
+    transform: none;
+  }
+}
+
+/* Focus visible para navegación por teclado */
+.modal-portal-content:focus-visible {
+  outline: 2px solid #00FFFF;
+  outline-offset: 2px;
+}
+
+/* Scroll personalizado para WebKit */
+.modal-portal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-portal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.modal-portal-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.modal-portal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
