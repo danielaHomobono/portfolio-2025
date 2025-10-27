@@ -313,19 +313,97 @@ const Projects = ({ onOpenModal }) => {
         {projects.map((project, index) => (
           <motion.div 
             key={index}
-            className="project-card"
+            className="project-card enhanced-card"
             initial={{ opacity: 0, y: 50 }}
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ delay: isVisible ? 0.1 * index : 0, duration: 0.6 }}
             whileHover={{ 
-              y: -15,
-              boxShadow: `0 20px 40px rgba(${project.color === "#00FFFF" ? "0, 255, 255" : 
+              y: -20,
+              rotateX: 5,
+              rotateY: 5,
+              scale: 1.02,
+              boxShadow: `0 30px 60px rgba(${project.color === "#00FFFF" ? "0, 255, 255" : 
                           project.color === "#32FF32" ? "50, 255, 50" : 
                           project.color === "#32CD32" ? "50, 205, 50" :
-                          "0, 128, 255"}, 0.3)`
+                          "0, 128, 255"}, 0.4)`
+            }}
+            style={{
+              background: 'linear-gradient(135deg, rgba(26, 26, 62, 0.9), rgba(45, 27, 105, 0.8))',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '20px',
+              padding: '25px',
+              position: 'relative',
+              overflow: 'hidden',
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)',
+              transformStyle: 'preserve-3d',
+              perspective: '1000px'
             }}
           >
-            <div className="project-image-container">
+            {/* Animated border gradient - desktop only */}
+            <div 
+              className="animated-border desktop-only"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                borderRadius: '20px',
+                padding: '2px',
+                background: `conic-gradient(from 0deg, ${project.color}, transparent, ${project.color})`,
+                animation: 'rotate 8s linear infinite',
+                zIndex: -1,
+                contain: 'layout style paint',
+                willChange: 'transform'
+              }}
+            >
+              <div style={{
+                width: '100%',
+                height: '100%',
+                borderRadius: '18px',
+                background: 'linear-gradient(135deg, rgba(26, 26, 62, 0.95), rgba(45, 27, 105, 0.9))'
+              }} />
+            </div>
+            
+            {/* Shimmer effect - desktop only */}
+            <div 
+              className="shimmer-effect desktop-only"
+              style={{
+                position: 'absolute',
+                top: '-50%',
+                left: '-50%',
+                width: '200%',
+                height: '200%',
+                background: `linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent)`,
+                animation: 'shimmer 8s ease-in-out infinite',
+                zIndex: 1,
+                pointerEvents: 'none',
+                contain: 'layout style paint',
+                willChange: 'transform'
+              }}
+            />
+            
+            {/* Glow orb - desktop only */}
+            <div 
+              className="glow-orb desktop-only"
+              style={{
+                position: 'absolute',
+                top: '20px',
+                right: '20px',
+                width: '100px',
+                height: '100px',
+                borderRadius: '50%',
+                background: `radial-gradient(circle, ${project.color}30, transparent)`,
+                filter: 'blur(20px)',
+                animation: 'pulse 6s ease-in-out infinite alternate',
+                zIndex: 0,
+                contain: 'layout style paint',
+                willChange: 'transform, opacity'
+              }}
+            />
+            
+            <div className="project-image-container" style={{ position: 'relative', zIndex: 2 }}>
               <OptimizedImage
                 src={project.image.replace('/assets/img/', '/assets/img/optimized/').replace('.png', '')}
                 alt={`Captura de pantalla del proyecto ${project.title} - ${(project.shortDescription || project.description).substring(0, 100)}...`}
@@ -334,15 +412,30 @@ const Projects = ({ onOpenModal }) => {
                 priority={index < 2}
               />
             </div>
-            <h3 style={{ color: project.color }}>{project.title}</h3>
-            <p>{project.shortDescription || project.description}</p>
-            <div className="project-actions">
+            <h3 style={{ 
+              color: project.color, 
+              position: 'relative', 
+              zIndex: 2,
+              textShadow: `0 0 20px ${project.color}40`
+            }}>{project.title}</h3>
+            <p style={{ position: 'relative', zIndex: 2 }}>{project.shortDescription || project.description}</p>
+            <div className="project-actions" style={{ position: 'relative', zIndex: 2 }}>
               <a href={project.link} target="_blank" rel="noopener noreferrer" 
                 style={{ 
                   background: `linear-gradient(135deg, ${project.color}, ${project.color === "#00FFFF" ? "#0080FF" : 
                                                                           project.color === "#32FF32" ? "#00FFFF" : 
                                                                           project.color === "#32CD32" ? "#228B22" :
-                                                                          "#32FF32"})`
+                                                                          "#32FF32"})`,
+                  boxShadow: `0 4px 15px ${project.color}30`,
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.boxShadow = `0 8px 25px ${project.color}50`;
+                  e.target.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.boxShadow = `0 4px 15px ${project.color}30`;
+                  e.target.style.transform = 'translateY(0)';
                 }}
               >
                 <i className="fas fa-external-link-alt"></i> Ver Proyecto
@@ -353,7 +446,17 @@ const Projects = ({ onOpenModal }) => {
                 style={{ 
                   background: `linear-gradient(135deg, ${project.color}, rgba(255,255,255,0.1))`,
                   border: `1px solid ${project.color}`,
-                  color: 'white'
+                  color: 'white',
+                  boxShadow: `0 4px 15px ${project.color}20`,
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.boxShadow = `0 8px 25px ${project.color}40`;
+                  e.target.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.boxShadow = `0 4px 15px ${project.color}20`;
+                  e.target.style.transform = 'translateY(0)';
                 }}
               >
                 <i className="fas fa-info-circle"></i> Detalles Técnicos
@@ -363,6 +466,138 @@ const Projects = ({ onOpenModal }) => {
         ))}
       </div>
       
+      <style>{`
+        @keyframes rotate {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes shimmer {
+          0% { 
+            transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% { 
+            transform: translateX(100%) translateY(100%) rotate(45deg);
+            opacity: 0;
+          }
+        }
+        
+        @keyframes pulse {
+          0% { 
+            opacity: 0.2; 
+            transform: scale(0.95); 
+          }
+          100% { 
+            opacity: 0.4; 
+            transform: scale(1.05); 
+          }
+        }
+        
+        .enhanced-card {
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          contain: layout style paint;
+          will-change: transform;
+        }
+        
+        .desktop-only {
+          display: block;
+        }
+        
+        /* Desktop effects */
+        @media (min-width: 769px) and (prefers-reduced-motion: no-preference) {
+          .enhanced-card:hover {
+            transform: translateY(-20px) rotateX(5deg) rotateY(5deg) scale(1.02);
+          }
+          
+          .enhanced-card:hover .shimmer-effect {
+            animation-duration: 4s;
+          }
+          
+          .enhanced-card:hover .glow-orb {
+            animation-duration: 3s;
+            opacity: 0.6;
+          }
+          
+          .enhanced-card:hover .animated-border {
+            animation-duration: 6s;
+          }
+        }
+        
+        /* Mobile optimizations - disable animations */
+        @media (max-width: 768px) {
+          .enhanced-card {
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            background: linear-gradient(135deg, rgba(26, 26, 62, 0.95), rgba(45, 27, 105, 0.9)) !important;
+          }
+          
+          .enhanced-card:hover {
+            transform: translateY(-5px);
+          }
+          
+          .shimmer-effect {
+            display: none !important;
+          }
+          
+          .glow-orb {
+            display: none !important;
+          }
+          
+          .animated-border {
+            display: none !important;
+          }
+        }
+        
+        /* Extra small screens */
+        @media (max-width: 480px) {
+          .enhanced-card {
+            background: rgba(26, 26, 62, 0.9) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+          }
+          
+          .enhanced-card:hover {
+            transform: none;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3) !important;
+          }
+        }
+        
+        /* Respect user's motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+          .enhanced-card {
+            transition: transform 0.2s ease;
+          }
+          
+          .animated-border,
+          .shimmer-effect,
+          .glow-orb {
+            animation: none !important;
+            opacity: 0.2;
+          }
+          
+          .enhanced-card:hover {
+            transform: translateY(-5px);
+          }
+        }
+        
+        /* High refresh rate optimization */
+        @media (min-resolution: 120dpi) {
+          .animated-border {
+            animation-duration: 10s;
+          }
+          
+          .shimmer-effect {
+            animation-duration: 10s;
+          }
+          
+          .glow-orb {
+            animation-duration: 8s;
+          }
+        }
+      `}</style>
 
     </section>
   );

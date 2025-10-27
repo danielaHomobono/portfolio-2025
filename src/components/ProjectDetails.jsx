@@ -226,7 +226,7 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
               fontSize: 'clamp(1.1rem, 3vw, 1.4rem)',
               fontWeight: '600'
             }}>
-              🛠️ Stack Técnico
+              Stack Técnico
             </h3>
             <div style={{ 
               display: 'flex', 
@@ -266,40 +266,21 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
         {project.challenges && project.challenges.length > 0 && (
           <div style={{ marginBottom: '25px' }}>
             <h3 style={{ 
-              color: '#FF6B6B', 
+              color: '#B19CD9', 
               marginBottom: '15px',
               fontSize: 'clamp(1rem, 2.8vw, 1.2rem)',
               fontWeight: '600'
             }}>
-              💪 Desafíos Principales
+              Desafíos Principales
             </h3>
-            <ul style={{ 
-              listStyle: 'none', 
-              padding: 0,
-              margin: 0
+            <p style={{
+              lineHeight: '1.6',
+              fontSize: 'clamp(0.85rem, 2.3vw, 1rem)',
+              color: '#f0f0f0',
+              marginBottom: '0'
             }}>
-              {project.challenges.map((challenge, index) => (
-                <li key={index} style={{
-                  background: 'rgba(255, 107, 107, 0.1)',
-                  border: '1px solid rgba(255, 107, 107, 0.3)',
-                  borderRadius: '8px',
-                  padding: '10px 12px',
-                  marginBottom: '8px',
-                  fontSize: 'clamp(0.8rem, 2.2vw, 0.9rem)',
-                  lineHeight: '1.4',
-                  position: 'relative',
-                  paddingLeft: '25px'
-                }}>
-                  <span style={{
-                    position: 'absolute',
-                    left: '8px',
-                    top: '10px',
-                    fontSize: '12px'
-                  }}>🔥</span>
-                  {challenge}
-                </li>
-              ))}
-            </ul>
+              {project.challenges.join(', optimicé los modelos y gestioné eficientemente ')}
+            </p>
           </div>
         )}
 
@@ -307,128 +288,27 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
         {project.solutions && project.solutions.length > 0 && (
           <div style={{ marginBottom: '25px' }}>
             <h3 style={{ 
-              color: '#4ECDC4', 
-              marginBottom: '15px',
-              fontSize: 'clamp(1rem, 2.8vw, 1.2rem)',
-              fontWeight: '600'
-            }}>
-              💡 Soluciones Implementadas
-            </h3>
-            <ul style={{ 
-              listStyle: 'none', 
-              padding: 0,
-              margin: 0
-            }}>
-              {project.solutions.map((solution, index) => (
-                <li key={index} style={{
-                  background: 'rgba(78, 205, 196, 0.1)',
-                  border: '1px solid rgba(78, 205, 196, 0.3)',
-                  borderRadius: '8px',
-                  padding: '10px 12px',
-                  marginBottom: '8px',
-                  fontSize: 'clamp(0.8rem, 2.2vw, 0.9rem)',
-                  lineHeight: '1.4',
-                  position: 'relative',
-                  paddingLeft: '25px'
-                }}>
-                  <span style={{
-                    position: 'absolute',
-                    left: '8px',
-                    top: '10px',
-                    fontSize: '12px'
-                  }}>✅</span>
-                  {solution}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* Aprendizajes */}
-        {project.learnings && project.learnings.length > 0 && (
-          <div style={{ marginBottom: '25px' }}>
-            <h3 style={{ 
-              color: '#FFD93D', 
-              marginBottom: '15px',
-              fontSize: 'clamp(1rem, 2.8vw, 1.2rem)',
-              fontWeight: '600'
-            }}>
-              📚 Lo que Aprendí
-            </h3>
-            <ul style={{ 
-              listStyle: 'none', 
-              padding: 0,
-              margin: 0
-            }}>
-              {project.learnings.map((learning, index) => (
-                <li key={index} style={{
-                  background: 'rgba(255, 217, 61, 0.1)',
-                  border: '1px solid rgba(255, 217, 61, 0.3)',
-                  borderRadius: '8px',
-                  padding: '10px 12px',
-                  marginBottom: '8px',
-                  fontSize: 'clamp(0.8rem, 2.2vw, 0.9rem)',
-                  lineHeight: '1.4',
-                  position: 'relative',
-                  paddingLeft: '25px'
-                }}>
-                  <span style={{
-                    position: 'absolute',
-                    left: '8px',
-                    top: '10px',
-                    fontSize: '12px'
-                  }}>⭐</span>
-                  {learning}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* Performance */}
-        {project.performance && (
-          <div style={{ marginBottom: '25px' }}>
-            <h3 style={{ 
               color: '#9B59B6', 
               marginBottom: '15px',
               fontSize: 'clamp(1rem, 2.8vw, 1.2rem)',
               fontWeight: '600'
             }}>
-              📊 Métricas de Performance
+              Soluciones Implementadas
             </h3>
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
-              gap: '10px'
+            <p style={{
+              lineHeight: '1.6',
+              fontSize: 'clamp(0.85rem, 2.3vw, 1rem)',
+              color: '#f0f0f0',
+              marginBottom: '0'
             }}>
-              {Object.entries(project.performance).map(([key, value], index) => (
-                <div key={index} style={{
-                  background: 'rgba(155, 89, 182, 0.1)',
-                  border: '1px solid rgba(155, 89, 182, 0.3)',
-                  borderRadius: '8px',
-                  padding: '10px',
-                  textAlign: 'center'
-                }}>
-                  <div style={{
-                    fontSize: 'clamp(0.7rem, 2vw, 0.8rem)',
-                    color: '#B19CD9',
-                    marginBottom: '4px',
-                    fontWeight: '500'
-                  }}>
-                    {key}
-                  </div>
-                  <div style={{
-                    fontSize: 'clamp(0.9rem, 2.4vw, 1rem)',
-                    color: '#fff',
-                    fontWeight: '600'
-                  }}>
-                    {value}
-                  </div>
-                </div>
-              ))}
-            </div>
+              {project.solutions.join(', implementé estrategias innovadoras y ')}
+            </p>
           </div>
         )}
+
+
+
+
         
         <div style={{ 
           display: 'flex', 
