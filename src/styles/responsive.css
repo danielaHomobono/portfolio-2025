@@ -38,9 +38,7 @@ html {
     font-size: 60%;
   }
   
-  .technologies-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  /* Grid de tecnologías manejado en styles.css */
   
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -155,9 +153,7 @@ html {
     margin-bottom: 1rem;
   }
   
-  .technologies-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  /* Grid de tecnologías manejado en styles.css */
   
   .projects-grid {
     grid-template-columns: 1fr;
@@ -175,6 +171,41 @@ html {
   .form-grid {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+}
+
+/* Mobile landscape - fix para orientación horizontal */
+@media (max-width: 768px) and (orientation: landscape) {
+  .missions-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem !important;
+    padding: 0 1rem;
+  }
+  
+  .mission-card {
+    min-height: 180px !important;
+    padding: 1rem !important;
+  }
+  
+  .mission-card i {
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .mission-card h3 {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .mission-card p {
+    font-size: 0.9rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .what-i-do-section > h2 {
+    margin-top: 4rem !important;
+    margin-bottom: 2rem !important;
+    font-size: 2rem !important;
   }
 }
 
@@ -229,10 +260,7 @@ html {
     margin-top: 2rem !important;
   }
   
-  .technologies-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
+  /* Grid de tecnologías manejado en styles.css */
   
   .tech-card {
     padding: 1.5rem 1rem;

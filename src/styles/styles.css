@@ -167,31 +167,53 @@ main {
   position: relative;
 }
 
-@media (min-width: 769px) {
+/* Solo animar en desktop y móvil portrait */
+@media (min-width: 769px), 
+       (max-width: 768px) and (orientation: portrait) {
   .profile-image-container {
     animation: float 6s ease-in-out infinite;
   }
 }
 
+/* Desactivar animaciones en móvil */
 @media (max-width: 768px) {
   .profile-image-container {
     animation: none !important;
     -webkit-animation: none !important;
-    transform: none !important;
-    -webkit-transform: none !important;
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
+    will-change: auto !important;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
   
   .profile-image {
     animation: none !important;
     -webkit-animation: none !important;
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
+    will-change: auto !important;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+/* Específico para móvil horizontal - máxima estabilidad */
+@media (max-width: 768px) and (orientation: landscape) {
+  .profile-image-container,
+  .profile-image {
+    animation: none !important;
+    -webkit-animation: none !important;
     transform: none !important;
     -webkit-transform: none !important;
+    transition: none !important;
+    -webkit-transition: none !important;
+    will-change: auto !important;
   }
   
-  .project-image-container img {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
+  .profile-image:hover {
+    transform: none !important;
+    -webkit-transform: none !important;
   }
 }
 
@@ -202,13 +224,11 @@ main {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgba(168, 85, 247, 0.3);
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
   transition: all 0.3s ease;
 }
 
 .profile-image:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(6, 182, 212, 0.8);
 }
 
 @media (max-width: 768px) {
@@ -284,6 +304,21 @@ main {
   transform: translateY(-10px);
   box-shadow: 0 -15px 30px rgba(168, 85, 247, 0.4);
   border-color: rgba(139, 92, 246, 0.2);
+}
+
+/* Desactivar animaciones en móvil horizontal */
+@media (max-width: 768px) and (orientation: landscape) {
+  .mission-card:hover {
+    transform: none !important;
+    -webkit-transform: none !important;
+    transition: none !important;
+    -webkit-transition: none !important;
+  }
+  
+  .mission-card:hover i {
+    transform: none !important;
+    -webkit-transform: none !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -376,6 +411,70 @@ main {
   margin: 0 auto;
 }
 
+/* Breakpoints profesionales para tecnologías */
+@media (max-width: 1440px) {
+  .technologies-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.8rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .technologies-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .technologies-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .technologies-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1rem !important;
+    padding: 0 1rem;
+  }
+  
+  .tech-card {
+    padding: 1rem 0.5rem !important;
+  }
+  
+  .tech-card i {
+    font-size: 2.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .tech-card h3 {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .technologies-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .technologies-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .technologies-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.8rem;
+  }
+}
+
 /* Tarjetas de tecnologías con efectos asombrosos */
 .tech-card {
   background: transparent;
@@ -395,9 +494,43 @@ main {
   transform: translateY(0);
 }
 
+/* Solo animar en desktop */
 @media (min-width: 769px) {
   .tech-card.animate {
     animation: techFloat 6s ease-in-out infinite;
+  }
+}
+
+/* Desactivar TODAS las animaciones en móvil */
+@media (max-width: 768px) {
+  .tech-card,
+  .tech-card.animate {
+    animation: none !important;
+    -webkit-animation: none !important;
+    transform: translateY(0) !important;
+    -webkit-transform: translateY(0) !important;
+    transition: opacity 0.3s ease !important;
+    -webkit-transition: opacity 0.3s ease !important;
+    will-change: auto !important;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  .tech-card:hover {
+    animation: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    animation-play-state: paused !important;
+  }
+  
+  .tech-card:hover i {
+    animation: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+  }
+  
+  .tech-card::before {
+    display: none !important;
   }
 }
 

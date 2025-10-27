@@ -1,0 +1,232 @@
+/* Cross-Platform & Cross-Browser Compatibility Fixes */
+
+/* iOS Safari específico */
+@supports (-webkit-touch-callout: none) {
+  /* Fix para viewport height en iOS Safari */
+  .hero-section {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+  
+  /* Fix para scroll bounce en iOS */
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+  }
+  
+  /* Fix para input zoom en iOS */
+  input, textarea, select {
+    font-size: 16px !important;
+    transform: translateZ(0);
+    -webkit-appearance: none;
+  }
+  
+  /* Fix para gradientes en iOS Safari */
+  .tech-card i,
+  .highlight,
+  .text-content > h2 {
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-attachment: fixed;
+  }
+}
+
+/* Android Chrome específico */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Fix para animaciones en Android */
+  .tech-card,
+  .mission-card,
+  .profile-image {
+    will-change: auto;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+  
+  /* Fix para backdrop-filter en Android */
+  .project-card,
+  form,
+  header.scrolled {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    background-color: rgba(168, 85, 247, 0.1);
+  }
+}
+
+/* Firefox específico */
+@-moz-document url-prefix() {
+  /* Fix para grid gaps en Firefox */
+  .technologies-grid,
+  .projects-grid,
+  .missions-grid {
+    gap: 2rem;
+    -moz-column-gap: 2rem;
+    -moz-row-gap: 2rem;
+  }
+  
+  /* Fix para gradientes en Firefox */
+  .tech-card i {
+    background: -moz-linear-gradient(135deg, #8b5cf6, #a855f7, #43c0dd);
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+  }
+}
+
+/* Edge/IE específico */
+@supports (-ms-ime-align: auto) {
+  /* Fix para grid en Edge legacy */
+  .technologies-grid {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 2rem 1fr 2rem 1fr 2rem 1fr 2rem 1fr 2rem 1fr;
+  }
+  
+  /* Fix para backdrop-filter fallback */
+  .project-card,
+  form {
+    background: rgba(168, 85, 247, 0.15) !important;
+  }
+}
+
+/* Webkit específico (Safari/Chrome) */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Fix para scrollbar personalizado */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(168, 85, 247, 0.1);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(168, 85, 247, 0.5);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(168, 85, 247, 0.7);
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Optimización para pantallas Retina */
+  .tech-card i,
+  .mission-card i {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Bordes más nítidos en high DPI */
+  .project-card,
+  .mission-card,
+  .tech-card {
+    border-width: 0.5px;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .profile-image-container {
+    animation: none !important;
+  }
+}
+
+/* Dark mode preference */
+@media (prefers-color-scheme: dark) {
+  /* Ya está optimizado para dark mode */
+}
+
+/* Contrast preference */
+@media (prefers-contrast: high) {
+  .tech-card,
+  .mission-card,
+  .project-card {
+    border: 2px solid #ffffff !important;
+  }
+  
+  .tech-card h3,
+  .mission-card h3 {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Optimización para dispositivos táctiles */
+  .tech-card,
+  .mission-card,
+  .project-card {
+    min-height: 44px; /* Mínimo recomendado por Apple */
+  }
+  
+  /* Eliminar hover effects en touch */
+  .tech-card:hover,
+  .mission-card:hover,
+  .project-card:hover {
+    transform: none !important;
+    animation: none !important;
+  }
+  
+  /* Mejorar tap targets */
+  nav a,
+  .project-actions a,
+  .project-actions button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 16px;
+  }
+}
+
+/* Landscape phone specific */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto;
+    padding: 1rem;
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .what-i-do-section > h2,
+  #technologies > h2,
+  #projects > h2 {
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .hero-section,
+  #technologies,
+  .what-i-do-section {
+    break-inside: avoid;
+  }
+  
+  .tech-card,
+  .mission-card {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+  
+  /* Hide interactive elements */
+  nav,
+  .project-actions,
+  form {
+    display: none !important;
+  }
+}

@@ -5,6 +5,7 @@ import '../styles/optimized-image.css';
 import '../styles/project-images.css';
 import '../styles/image-enhancements.css';
 import '../styles/specific-image-fixes.css';
+import '../styles/cross-platform-fixes.css';
 
 const Projects = ({ onOpenModal }) => {
   const [ref, isVisible] = useIntersectionObserver();
