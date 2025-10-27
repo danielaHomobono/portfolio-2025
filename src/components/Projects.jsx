@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useDeviceDetection } from '../hooks/useDeviceDetection';
 import OptimizedImage from './OptimizedImage';
 import '../styles/optimized-image.css';
 import '../styles/project-images.css';
 import '../styles/image-enhancements.css';
 import '../styles/specific-image-fixes.css';
-import '../styles/cross-platform-fixes.css';
 
 const Projects = ({ onOpenModal }) => {
   const [ref, isVisible] = useIntersectionObserver();
+  const { isMobile } = useDeviceDetection();
   
   const projects = [
     {
@@ -301,7 +302,7 @@ const Projects = ({ onOpenModal }) => {
   ];
 
   return (
-    <section id="projects" ref={ref}>
+  <section id="projects" ref={ref}>
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -310,7 +311,7 @@ const Projects = ({ onOpenModal }) => {
         Proyectos Destacados
       </motion.h2>
       
-      <div className="projects-grid">
+  <div className={`projects-grid ${isMobile ? 'mobile' : 'desktop'}`}> 
         {projects.map((project, index) => (
           <motion.div 
             key={index}

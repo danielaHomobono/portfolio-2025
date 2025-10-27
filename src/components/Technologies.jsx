@@ -1,12 +1,14 @@
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useDeviceDetection } from '../hooks/useDeviceDetection';
 
 const Technologies = () => {
   const [ref, isVisible] = useIntersectionObserver();
+  const { isMobile } = useDeviceDetection();
   
   return (
     <section id="technologies" ref={ref}>
       <h2>Tecnologías</h2>
-      <div className="technologies-grid">
+  <div className={`technologies-grid ${isMobile ? 'mobile' : 'desktop'}`}> 
         <div className={`tech-card ${isVisible ? 'animate' : ''}`}>
           <i className="fab fa-react" aria-hidden="true"></i>
           <h3>React</h3>

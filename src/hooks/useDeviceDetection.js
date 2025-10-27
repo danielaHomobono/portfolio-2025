@@ -21,7 +21,11 @@ export const useDeviceDetection = () => {
 
     checkDevice()
     window.addEventListener('resize', checkDevice)
-    return () => window.removeEventListener('resize', checkDevice)
+    window.addEventListener('orientationchange', checkDevice)
+    return () => {
+      window.removeEventListener('resize', checkDevice)
+      window.removeEventListener('orientationchange', checkDevice)
+    }
   }, [])
 
   return { isMobile, isLowEnd }
