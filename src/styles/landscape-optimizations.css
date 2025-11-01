@@ -1,0 +1,178 @@
+/* ============================================
+   LANDSCAPE OPTIMIZATIONS - CONSOLIDATED
+   ============================================
+   Unified media queries for consistent landscape behavior
+   Replaces conflicting rules from multiple files
+============================================ */
+
+/* Standard breakpoints for landscape optimization */
+@media (max-width: 896px) and (orientation: landscape) {
+  
+  /* ============================================
+     GRID LAYOUTS - CONSISTENT COLUMNS
+  ============================================ */
+  .missions-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1rem !important;
+    padding: 0 1rem;
+  }
+  
+  .technologies-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0.8rem !important;
+    padding: 0 1rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+  
+  /* ============================================
+     HERO SECTION LAYOUT
+  ============================================ */
+  .hero-section {
+    min-height: auto !important;
+    padding: 1rem 2rem !important;
+  }
+  
+  .about-container {
+    grid-template-columns: 1fr 140px !important;
+    gap: 1.5rem !important;
+    align-items: start !important;
+  }
+  
+  .profile-image-container,
+  .matrix-photo-container,
+  .profile-image,
+  .matrix-canvas {
+    width: 140px !important;
+    height: 140px !important;
+  }
+  
+  /* ============================================
+     TYPOGRAPHY SCALING
+  ============================================ */
+  .spectacular-title {
+    font-size: 2rem !important;
+  }
+  
+  .text-content > h2 {
+    font-size: 1.5rem !important;
+    text-align: left !important;
+  }
+  
+  .what-i-do-section > h2,
+  #technologies > h2,
+  #projects > h2,
+  #contact > h2 {
+    font-size: 1.6rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* ============================================
+     CARD OPTIMIZATIONS
+  ============================================ */
+  .mission-card {
+    min-height: 150px !important;
+    max-height: 150px !important;
+    padding: 0.8rem 0.5rem !important;
+  }
+  
+  .mission-card i {
+    font-size: 1.8rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+  
+  .mission-card h3 {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+  
+  .mission-card p {
+    font-size: 0.7rem !important;
+    line-height: 1.2 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+  
+  .tech-card {
+    padding: 0.8rem 0.4rem !important;
+  }
+  
+  .tech-card i {
+    font-size: 2rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+  
+  .tech-card h3 {
+    font-size: 0.75rem !important;
+  }
+  
+  /* ============================================
+     PROJECT CARDS
+  ============================================ */
+  .project-image-container {
+    height: 100px !important;
+    margin-bottom: 0.8rem !important;
+  }
+  
+  .project-card h3 {
+    font-size: 1rem !important;
+    padding: 0 0.8rem !important;
+  }
+  
+  .project-card p {
+    font-size: 0.75rem !important;
+    padding: 0 0.8rem !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+  
+  /* ============================================
+     FORM OPTIMIZATIONS
+  ============================================ */
+  .form-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.8rem !important;
+  }
+  
+  form {
+    padding: 1.2rem !important;
+  }
+  
+  form input,
+  form textarea {
+    padding: 0.5rem !important;
+    font-size: 0.85rem !important;
+  }
+  
+  form textarea {
+    min-height: 70px !important;
+    resize: none !important;
+  }
+}
+
+/* ============================================
+   EXTREME LANDSCAPE (very low height)
+============================================ */
+@media (max-height: 400px) and (orientation: landscape) {
+  .profile-image-container,
+  .matrix-photo-container {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  
+  .about-container {
+    grid-template-columns: 1fr 100px !important;
+  }
+  
+  .mission-card {
+    min-height: 120px !important;
+    max-height: 120px !important;
+  }
+}
