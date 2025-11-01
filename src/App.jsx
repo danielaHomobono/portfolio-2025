@@ -38,6 +38,7 @@ import './styles/unified-titles.css'
 import './styles/hero-ctas.css'
 import './styles/hero-intro.css'
 import './styles/project-modal.css'
+import './styles/mobile-landscape-fix.css'
 
 
 function App() {
