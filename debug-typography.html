@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Typography</title>
+    <style>
+        /* Simular el problema */
+        html { font-size: 100%; }
+        
+        @media (max-width: 768px) {
+            html { font-size: 70%; }
+        }
+        
+        .spectacular-title {
+            font-size: 3.5rem;
+            color: red;
+        }
+        
+        /* Test override */
+        @media (max-width: 768px) and (orientation: portrait) {
+            html { font-size: 100%; }
+            .spectacular-title { font-size: 4rem; color: blue; }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="spectacular-title">¡HOLA!</h1>
+    <p>Texto normal: 1rem</p>
+    <p>Computed font-size del html: <span id="htmlSize"></span></p>
+    <p>Computed font-size del título: <span id="titleSize"></span></p>
+    
+    <script>
+        const htmlSize = getComputedStyle(document.documentElement).fontSize;
+        const titleSize = getComputedStyle(document.querySelector('.spectacular-title')).fontSize;
+        
+        document.getElementById('htmlSize').textContent = htmlSize;
+        document.getElementById('titleSize').textContent = titleSize;
+        
+        console.log('HTML font-size:', htmlSize);
+        console.log('Title font-size:', titleSize);
+        console.log('Viewport width:', window.innerWidth);
+        console.log('Orientation:', window.innerWidth > window.innerHeight ? 'landscape' : 'portrait');
+    </script>
+</body>
+</html>

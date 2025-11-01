@@ -1,0 +1,173 @@
+/* ============================================
+   MOBILE PORTRAIT TYPOGRAPHY FIX
+   ============================================
+   MUST be imported AFTER mobile-landscape-fix.css
+   to override font-size reductions
+============================================ */
+
+/* ============================================
+   MOBILE PORTRAIT TYPOGRAPHY - MAXIMUM SPECIFICITY
+   ============================================
+   MUST BE LAST CSS FILE IMPORTED
+   Uses maximum CSS specificity to override all conflicts
+============================================ */
+
+/* STEP 1: Force html font-size to 100% with high specificity */
+html.mobile-portrait-fix {
+  font-size: 100%;
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  html {
+    font-size: 100%;
+  }
+  
+  /* STEP 2: Hero section with maximum specificity */
+  body .hero-section .hero-content .text-content .spectacular-title {
+    font-size: 42px; /* Reduced from 60px */
+  }
+  
+  body .hero-section .hero-content .text-content .intro-main {
+    font-size: 22px; /* Reduced from 32px */
+    text-align: left;
+  }
+  
+  body .hero-section .hero-content .text-content .intro-summary {
+    font-size: 20px; /* Reduced from 28px */
+    text-align: left;
+  }
+  
+  body .hero-section .hero-content .welcome-text .welcome-title {
+    font-size: 28px; /* Reduced from 42px */
+  }
+  
+  body .hero-section .hero-content .text-content .highlight {
+    font-size: 22px; /* Reduced from 32px */
+  }
+  
+  body .hero-section .hero-content .text-content p {
+    font-size: 22px; /* Reduced from 32px */
+  }
+  
+  body .hero-section .hero-content .text-content > h2 {
+    font-size: 36px; /* Reduced from 52px */
+  }
+  
+  /* STEP 3: Section titles with maximum specificity */
+  body main .what-i-do-section > h2,
+  body main #technologies > h2,
+  body main #projects > h2,
+  body main #contact > h2 {
+    font-size: 32px; /* Reduced from 48px */
+  }
+  
+  /* STEP 4: Cards with maximum specificity */
+  body main .missions-grid .mission-card h3 {
+    font-size: 20px; /* Reduced from 26px */
+  }
+  
+  body main .missions-grid .mission-card p {
+    font-size: 16px; /* Reduced from 20px */
+  }
+  
+  body main .technologies-grid .tech-card h3 {
+    font-size: 16px; /* Reduced from 22px */
+  }
+  
+  body main .projects-grid .project-card h3 {
+    font-size: 18px; /* Reduced from 24px */
+  }
+  
+  body main .projects-grid .project-card p {
+    font-size: 16px; /* Reduced from 21px */
+  }
+  
+  /* STEP 5: Form elements */
+  body main #contact form label {
+    font-size: 16px; /* Reduced from 21px */
+  }
+  
+  body main #contact form input,
+  body main #contact form textarea {
+    font-size: 16px; /* Reduced from 19px */
+  }
+}
+
+/* MOBILE LANDSCAPE: Fix small text in horizontal orientation */
+@media screen and (max-width: 896px) and (orientation: landscape) {
+  html {
+    font-size: 100%; /* Override any reductions */
+  }
+  
+  /* Hero section in landscape */
+  body .hero-section .hero-content .text-content .spectacular-title {
+    font-size: 32px; /* Readable in landscape */
+  }
+  
+  body .hero-section .hero-content .text-content .intro-main {
+    font-size: 16px;
+  }
+  
+  body .hero-section .hero-content .text-content .intro-summary {
+    font-size: 14px;
+  }
+  
+  body .hero-section .hero-content .welcome-text .welcome-title {
+    font-size: 18px;
+  }
+  
+  body .hero-section .hero-content .text-content .highlight {
+    font-size: 16px;
+  }
+  
+  /* Section titles in landscape */
+  body main .what-i-do-section > h2,
+  body main #technologies > h2,
+  body main #projects > h2,
+  body main #contact > h2 {
+    font-size: 24px; /* Override mobile-landscape-fix.css */
+  }
+  
+  /* Cards in landscape */
+  body main .missions-grid .mission-card h3 {
+    font-size: 14px; /* Override small sizes */
+  }
+  
+  body main .missions-grid .mission-card p {
+    font-size: 12px;
+  }
+  
+  body main .technologies-grid .tech-card h3 {
+    font-size: 12px;
+  }
+  
+  body main .projects-grid .project-card h3 {
+    font-size: 16px;
+  }
+  
+  body main .projects-grid .project-card p {
+    font-size: 12px;
+  }
+}
+
+/* Smaller screens portrait */
+@media screen and (max-width: 375px) and (orientation: portrait) {
+  body .hero-section .hero-content .text-content .spectacular-title {
+    font-size: 38px;
+  }
+  
+  body .hero-section .hero-content .text-content .intro-main {
+    font-size: 20px;
+  }
+  
+  body .hero-section .hero-content .text-content .intro-summary {
+    font-size: 18px;
+  }
+  
+  body main .what-i-do-section > h2,
+  body main #technologies > h2,
+  body main #projects > h2,
+  body main #contact > h2 {
+    font-size: 28px;
+  }
+}

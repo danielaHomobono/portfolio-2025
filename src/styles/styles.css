@@ -120,31 +120,7 @@ main {
   }
 }
 
-/* Mobile portrait typography improvements - using px to override html font-size reduction */
-@media (max-width: 768px) and (orientation: portrait) {
-  .spectacular-title {
-    font-size: 45px !important; /* ~2.8rem at 16px base */
-  }
-  
-  .intro-main {
-    font-size: 30px !important; /* ~1.9rem at 16px base */
-    line-height: 1.6 !important;
-  }
-  
-  .intro-summary {
-    font-size: 26px !important; /* ~1.6rem at 16px base */
-    line-height: 1.5 !important;
-  }
-  
-  .welcome-title {
-    font-size: 29px !important; /* ~1.8rem at 16px base */
-    letter-spacing: 1px !important;
-  }
-  
-  .highlight {
-    font-size: 29px !important; /* Match welcome-title */
-  }
-}
+
 
 #threejs-canvas {
   position: absolute;
