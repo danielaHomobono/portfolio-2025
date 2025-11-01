@@ -91,3 +91,23 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Optimize animations for mobile landscape to prevent lag */
+@media (max-width: 896px) and (orientation: landscape) {
+  .spectacular-title,
+  .matrix-photo-container,
+  .welcome-text .highlight,
+  .tech-card,
+  .mission-card,
+  .profile-image-container {
+    animation: none !important;
+    transform: none !important;
+    transition: opacity 0.2s ease !important;
+  }
+  
+  .tech-card:hover,
+  .mission-card:hover {
+    transform: none !important;
+    animation: none !important;
+  }
+}
