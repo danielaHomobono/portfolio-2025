@@ -103,13 +103,21 @@ main {
 
 /* La hero section es mi favorita, usé Flexbox para centrar todo */
 .hero-section {
-  min-height: 100vh;
+  min-height: 100svh; /* Safe viewport height for mobile */
+  height: auto; /* Allow natural growth */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem;
+  padding: clamp(1rem, 4vw, 2rem); /* Responsive padding */
   position: relative;
   overflow: hidden;
+}
+
+/* Fallback for browsers without svh support */
+@supports not (height: 100svh) {
+  .hero-section {
+    min-height: 100vh;
+  }
 }
 
 #threejs-canvas {
