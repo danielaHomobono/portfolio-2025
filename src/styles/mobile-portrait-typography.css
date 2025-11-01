@@ -30,11 +30,17 @@ html.mobile-portrait-fix {
   body .hero-section .hero-content .text-content .intro-main {
     font-size: 22px; /* Reduced from 32px */
     text-align: left;
+    line-height: 1.6;
+    word-spacing: 0.1em;
+    margin-bottom: 1.2rem;
   }
   
   body .hero-section .hero-content .text-content .intro-summary {
     font-size: 20px; /* Reduced from 28px */
     text-align: left;
+    line-height: 1.6;
+    word-spacing: 0.1em;
+    margin-bottom: 1.2rem;
   }
   
   body .hero-section .hero-content .welcome-text .welcome-title {
@@ -158,10 +164,18 @@ html.mobile-portrait-fix {
   
   body .hero-section .hero-content .text-content .intro-main {
     font-size: 20px;
+    text-align: left;
+    line-height: 1.6;
+    word-spacing: 0.1em;
+    margin-bottom: 1.2rem;
   }
   
   body .hero-section .hero-content .text-content .intro-summary {
     font-size: 18px;
+    text-align: left;
+    line-height: 1.6;
+    word-spacing: 0.1em;
+    margin-bottom: 1.2rem;
   }
   
   body main .what-i-do-section > h2,

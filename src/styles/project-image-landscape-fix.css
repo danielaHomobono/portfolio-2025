@@ -1,0 +1,85 @@
+/* ============================================
+   PROJECT IMAGE LANDSCAPE FIX
+   ============================================
+   Fixes specific image cropping issues in landscape
+   Must be imported AFTER mobile-landscape-fix.css
+   Uses attribute selectors for better browser support
+============================================ */
+
+/* Override mobile-landscape-fix.css for ALL project images in landscape */
+@media screen and (max-width: 896px) and (orientation: landscape) {
+  
+  /* STEP 1: Override the restrictive height from mobile-landscape-fix.css */
+  .project-image-container {
+    height: 120px; /* Increased from 100px */
+    aspect-ratio: auto; /* Remove forced 16/9 */
+    margin-bottom: 0.8rem;
+  }
+  
+  /* STEP 2: Fix object-fit for all project images */
+  .project-image-container img,
+  .project-image-container .optimized-image {
+    object-fit: contain; /* Show full image without cropping */
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* STEP 3: Specific fixes for problematic images */
+  
+  /* Avatar (porfolio2) - needs more height to show full image */
+  .project-image-container:has(img[src*="porfolio2"]),
+  .project-image-container:has(.optimized-image[src*="porfolio2"]) {
+    height: 160px !important; /* Even more height for this specific image */
+    aspect-ratio: auto !important; /* Remove forced aspect ratio */
+  }
+  
+  img[src*="porfolio2"],
+  .optimized-image[src*="porfolio2"] {
+    object-fit: contain !important;
+    object-position: center top !important; /* Align to top to show full image */
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  img[src*="ai-resume"],
+  .optimized-image[src*="ai-resume"] {
+    object-fit: contain;
+    object-position: center;
+  }
+  
+  /* STEP 4: Override any conflicting rules from other files */
+  .project-image-container .optimized-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* For very low height screens - more conservative */
+@media screen and (max-height: 400px) and (orientation: landscape) {
+  .project-image-container {
+    height: 100px; /* Keep smaller for very low screens */
+  }
+  
+  /* But still give porfolio2 more space */
+  .project-image-container:has(img[src*="porfolio2"]),
+  .project-image-container:has(.optimized-image[src*="porfolio2"]) {
+    height: 140px !important; /* Still more height even on low screens */
+  }
+  
+  img[src*="porfolio2"],
+  .optimized-image[src*="porfolio2"] {
+    object-position: center top !important; /* Ensure top is visible */
+  }
+}
+
+/* Ensure no hover effects interfere in landscape */
+@media screen and (max-width: 896px) and (orientation: landscape) {
+  .project-card:hover .project-image-container img,
+  .project-card:hover .project-image-container .optimized-image {
+    transform: none;
+  }
+}
