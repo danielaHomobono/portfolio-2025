@@ -15,6 +15,7 @@ import TextReveal from './components/TextReveal'
 import MobileOptimizer from './components/MobileOptimizer'
 import { useScrollOptimization } from './hooks/useScrollOptimization'
 import { initMobilePortraitFix } from './utils/mobilePortraitDetector'
+import { initMobileEffects } from './utils/mobileEffects'
 
 import './styles/reset.css'
 import './styles/styles.css'
@@ -43,6 +44,7 @@ import './styles/landscape-optimizations.css'
 import './styles/mobile-landscape-fix.css'
 import './styles/project-image-landscape-fix.css'
 import './styles/mobile-portrait-typography.css'
+import './styles/mobile-tech-effects.css'
 
 
 function App() {
@@ -57,6 +59,12 @@ function App() {
     const cleanup = initMobilePortraitFix();
     return cleanup;
   }, []);
+  
+  // Initialize mobile effects
+  useEffect(() => {
+    const cleanup = initMobileEffects();
+    return cleanup;
+  }, [isLoading]);
   
   const handleLoadingComplete = () => {
     setIsLoading(false);

@@ -115,6 +115,10 @@ html {
     font-size: 70%;
   }
   
+  .text-content p {
+    text-align: center !important;
+  }
+  
   header {
     padding: 1.2rem;
   }

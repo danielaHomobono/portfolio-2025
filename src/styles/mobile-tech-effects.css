@@ -1,0 +1,110 @@
+/* MOBILE TECH EFFECTS - Efecto espectacular final */
+@media (max-width: 768px) and (orientation: portrait) {
+  
+  /* Efecto neon cyberpunk */
+  body #technologies .tech-card {
+    border: 4px solid #00FFFF !important;
+    background: rgba(0, 255, 255, 0.1) !important;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6), inset 0 0 25px rgba(0, 255, 255, 0.1) !important;
+    position: relative !important;
+  }
+  
+  /* Colores únicos para cada tarjeta */
+  body #technologies .tech-card:nth-child(1) {
+    border-color: #FF0080 !important;
+    box-shadow: 0 0 25px rgba(255, 0, 128, 0.6), inset 0 0 25px rgba(255, 0, 128, 0.1) !important;
+  }
+  
+  body #technologies .tech-card:nth-child(2) {
+    border-color: #00FF80 !important;
+    box-shadow: 0 0 25px rgba(0, 255, 128, 0.6), inset 0 0 25px rgba(0, 255, 128, 0.1) !important;
+  }
+  
+  body #technologies .tech-card:nth-child(3) {
+    border-color: #8000FF !important;
+    box-shadow: 0 0 25px rgba(128, 0, 255, 0.6), inset 0 0 25px rgba(128, 0, 255, 0.1) !important;
+  }
+  
+  body #technologies .tech-card:nth-child(4) {
+    border-color: #A855F7 !important;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.6), inset 0 0 25px rgba(168, 85, 247, 0.1) !important;
+  }
+  
+  body #technologies .tech-card:nth-child(5) {
+    border-color: #0080FF !important;
+    box-shadow: 0 0 25px rgba(0, 128, 255, 0.6), inset 0 0 25px rgba(0, 128, 255, 0.1) !important;
+  }
+  
+  body #technologies .tech-card:nth-child(6) {
+    border-color: #FF0040 !important;
+    box-shadow: 0 0 25px rgba(255, 0, 64, 0.6), inset 0 0 25px rgba(255, 0, 64, 0.1) !important;
+  }
+  
+  body #technologies .tech-card:nth-child(7) {
+    border-color: #06B6D4 !important;
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.6), inset 0 0 25px rgba(6, 182, 212, 0.1) !important;
+  }
+  
+  body #technologies .tech-card:nth-child(8) {
+    border-color: #4000FF !important;
+    box-shadow: 0 0 25px rgba(64, 0, 255, 0.6), inset 0 0 25px rgba(64, 0, 255, 0.1) !important;
+  }
+  
+  body #technologies .tech-card:nth-child(9) {
+    border-color: #C084FC !important;
+    box-shadow: 0 0 25px rgba(192, 132, 252, 0.6), inset 0 0 25px rgba(192, 132, 252, 0.1) !important;
+  }
+  
+  /* Efecto de brillo en movimiento */
+  body #technologies .tech-card::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -2px !important;
+    left: -2px !important;
+    right: -2px !important;
+    bottom: -2px !important;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+    border-radius: inherit !important;
+    z-index: -1 !important;
+  }
+  
+  /* Touch feedback espectacular */
+  body #technologies .tech-card:active {
+    transform: scale(0.9) !important;
+    border-width: 6px !important;
+    box-shadow: 0 0 40px currentColor, inset 0 0 40px rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  /* Iconos con efectos especiales */
+  body #technologies .tech-card i {
+    background: linear-gradient(45deg, #00FFFF, #FF00FF, #FFFF00) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.8)) !important;
+  }
+  
+  body #technologies .tech-card:active i {
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 1)) !important;
+    transform: scale(1.2) !important;
+  }
+  
+  /* Reducir SOLO el espacio entre ¿Qué Hago? y Tecnologías */
+  body main .what-i-do-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  body main .what-i-do-section .missions-grid {
+    margin-bottom: 0 !important;
+  }
+  
+  body main #technologies {
+    margin-top: -7rem !important;
+  }
+  
+  body main #technologies > h2 {
+    margin-top: 2rem !important;
+    margin-bottom: 3rem !important;
+  }
+}

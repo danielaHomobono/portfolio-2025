@@ -89,7 +89,7 @@
   }
   
   nav ul li {
-    margin: 1.5rem 0;
+    margin: 1rem 0;
     width: 100%;
     text-align: center;
   }
@@ -97,7 +97,8 @@
   nav a:link, nav a:visited {
     display: block;
     width: 100%;
-    font-size: 1.8rem;
+    font-size: 1.1rem;
+    padding: 0.8rem 1rem;
   }
   
   header.menu-open .mobile-menu-toggle span:nth-child(1) {
@@ -122,5 +123,48 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 999;
+  }
+}
+
+/* Ajustes para móviles pequeños */
+@media (max-width: 480px) {
+  .mobile-menu-toggle {
+    width: 3rem !important;
+    height: 3rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.3rem !important;
+  }
+  
+  .mobile-menu-toggle span {
+    width: 1.8rem !important;
+    height: 0.2rem !important;
+    margin: 0 !important;
+  }
+  
+  nav a:link, nav a:visited {
+    font-size: 1rem !important;
+    padding: 0.7rem 0.8rem !important;
+  }
+  
+  nav ul li {
+    margin: 0.8rem 0 !important;
+  }
+  
+  nav ul {
+    padding: 1.5rem !important;
+  }
+}
+
+@media (max-width: 375px) {
+  nav a:link, nav a:visited {
+    font-size: 0.9rem !important;
+    padding: 0.6rem 0.7rem !important;
+  }
+  
+  nav ul li {
+    margin: 0.6rem 0 !important;
   }
 }
