@@ -88,6 +88,14 @@ const Hero = () => {
               <a href="#contact" className="cta-secondary" onClick={(e) => handleSmoothScroll(e, '#contact')}>
                 Contactar
               </a>
+              <a 
+                href="/assets/CV-DanielaHomobono-2025.pdf" 
+                download="CV-DanielaHomobono-2025.pdf"
+                className="cta-download"
+                title="Descargar CV"
+              >
+                Descargar CV
+              </a>
             </motion.div>
           </div>
           <motion.div 

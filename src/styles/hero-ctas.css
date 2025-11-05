@@ -8,7 +8,8 @@
 }
 
 .cta-primary,
-.cta-secondary {
+.cta-secondary,
+.cta-download {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -23,6 +24,8 @@
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
+  min-width: 180px;
+  white-space: nowrap;
 }
 
 .cta-primary,
@@ -31,6 +34,13 @@
   color: #00FFFF;
   border: 2px solid #00FFFF;
   box-shadow: 0 8px 25px rgba(0, 255, 255, 0.2);
+}
+
+.cta-download {
+  background: transparent;
+  color: #a855f7;
+  border: 2px solid #a855f7;
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.2);
 }
 
 .cta-primary:hover,
@@ -42,8 +52,17 @@
   border-color: #32FF32;
 }
 
+.cta-download:hover {
+  background: rgba(168, 85, 247, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(168, 85, 247, 0.4);
+  color: #c084fc;
+  border-color: #c084fc;
+}
+
 .cta-primary::before,
-.cta-secondary::before {
+.cta-secondary::before,
+.cta-download::before {
   content: '';
   position: absolute;
   top: 0;
@@ -55,7 +74,8 @@
 }
 
 .cta-primary:hover::before,
-.cta-secondary:hover::before {
+.cta-secondary:hover::before,
+.cta-download:hover::before {
   left: 100%;
 }
 
@@ -67,7 +87,8 @@
   }
   
   .cta-primary,
-  .cta-secondary {
+  .cta-secondary,
+  .cta-download {
     width: 100%;
     max-width: 280px;
     justify-content: center;

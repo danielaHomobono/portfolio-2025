@@ -262,12 +262,17 @@
   }
   
   .cta-primary,
-  .cta-secondary {
+  .cta-secondary,
+  .cta-download {
     padding: 0.5rem 1rem !important;
     font-size: 0.8rem !important;
     flex: none !important;
     min-width: 120px !important;
     max-width: 140px !important;
+  }
+  
+  .cta-download i {
+    font-size: 0.7rem !important;
   }
   
   /* ============================================

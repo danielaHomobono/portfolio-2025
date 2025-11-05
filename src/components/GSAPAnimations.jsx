@@ -4,7 +4,7 @@ import { gsap } from 'gsap'
 const GSAPAnimations = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
-      // Floating animation for profile image
+     
       // Floating animation for profile image (ahora en el contenedor)
       const matrixPhotoContainer = document.querySelector('.matrix-photo-container')
       if (matrixPhotoContainer) {
