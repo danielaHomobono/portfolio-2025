@@ -37,7 +37,7 @@ const Hero = () => {
         >
           <div className="text-content parallax-slow">
             <h2 className="spectacular-title">
-              ¡HOLA!
+              Daniela Homobono
             </h2>
             <motion.div
               className="hero-intro"
@@ -46,7 +46,7 @@ const Hero = () => {
               transition={{ delay: 0.6, duration: 1 }}
             >
               <p className="intro-main">
-                Soy <span className="highlight" style={{fontSize: '1.4em', fontWeight: 'bold', textShadow: '0 0 10px rgba(139, 92, 246, 0.8)'}}>Daniela Homobono</span>, Full Stack Developer de Río Tercero, Córdoba.
+                Full Stack Developer | Backend · Node.js · NestJS · Python · AWS
               </p>
               
               <motion.p
@@ -55,8 +55,7 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.0, duration: 0.8 }}
               >
-                Transformo ideas en experiencias digitales que resuelven problemas reales. 
-                La programación es mi pasión y forma de expresión.
+                Desarrollo APIs, sistemas backend y aplicaciones web que resuelven problemas reales. Especializada en arquitecturas con IA integrada y cloud.
               </motion.p>
             </motion.div>
             <motion.div
@@ -89,8 +88,8 @@ const Hero = () => {
                 Contactar
               </a>
               <a 
-                href="/assets/CV-DanielaHomobono-2025.pdf" 
-                download="CV-DanielaHomobono-2025.pdf"
+                href="/assets/CV-DanielaHomobono-2026.pdf" 
+                download="CV-DanielaHomobono-2026.pdf"
                 className="cta-download"
                 title="Descargar CV"
               >
@@ -141,18 +140,18 @@ const Hero = () => {
             {[
               {
                 icon: "fas fa-code",
-                title: "Desarrollo Full Stack",
-                description: "Creo aplicaciones web completas utilizando React, Redux y Node.js en el frontend, e implemento APIs robustas con Express, Flask y bases de datos SQL/NoSQL. Mi enfoque end-to-end garantiza soluciones coherentes y escalables."
+                title: "Backend Development",
+                description: "Diseño y desarrollo APIs REST escalables con Node.js, NestJS y Python (FastAPI). Autenticación JWT, OAuth 2.0, RBAC, arquitectura modular y procesamiento asíncrono."
               },
               {
                 icon: "fas fa-mobile-alt",
-                title: "Desarrollo Móvil",
-                description: "Diseño y desarrollo aplicaciones móviles nativas con Kotlin y C#, integrando bases de datos SQLite para crear experiencias fluidas y responsivas que funcionan perfectamente en cualquier dispositivo."
+                title: "IA & Cloud",
+                description: "Integro modelos de lenguaje (Azure OpenAI, Claude API, Llama) en aplicaciones reales. Certificada en AWS (re/Start Graduate, Cloud Architecting) y Azure OpenAI."
               },
               {
                 icon: "fas fa-server",
-                title: "DevOps y Cloud",
-                description: "Implemento y gestiono infraestructura en la nube con AWS, automatizo procesos de CI/CD con GitHub Actions y aplico metodologías ágiles para garantizar despliegues eficientes y seguros."
+                title: "Full Stack",
+                description: "Desarrollo aplicaciones completas con React, Next.js y TypeScript en el frontend, integradas con backends robustos y bases de datos relacionales y NoSQL."
               }
             ].map((item, i) => (
               <motion.div
@@ -177,24 +176,24 @@ const Hero = () => {
                   <div className="tech-stack">
                     <h4>Stack:</h4>
                     <div className="tech-tags">
-                      {i === 0 && ["React", "Node.js", "MongoDB"].map((tech, idx) => (
+                      {i === 0 && ["Node.js", "NestJS", "Python", "FastAPI", "PostgreSQL", "MongoDB", "Redis"].map((tech, idx) => (
                         <span key={idx} className="tech-tag">{tech}</span>
                       ))}
-                      {i === 1 && ["Kotlin", "C#", "SQLite"].map((tech, idx) => (
+                      {i === 1 && ["Azure OpenAI", "Claude API", "AWS", "Docker", "CI/CD"].map((tech, idx) => (
                         <span key={idx} className="tech-tag">{tech}</span>
                       ))}
-                      {i === 2 && ["AWS", "Docker", "CI/CD"].map((tech, idx) => (
+                      {i === 2 && ["React", "Next.js", "TypeScript", "TailwindCSS", "Supabase"].map((tech, idx) => (
                         <span key={idx} className="tech-tag">{tech}</span>
                       ))}
                     </div>
                   </div>
                   <div className="stats">
                     <div className="stat">
-                      <span className="stat-value">{["Full Stack", "Nativo", "Cloud"][i]}</span>
+                      <span className="stat-value">{["Backend", "IA Aplicada", "Full Stack"][i]}</span>
                       <span className="stat-label">Enfoque</span>
                     </div>
                     <div className="stat">
-                      <span className="stat-value">{["APIs REST", "SQLite", "CI/CD"][i]}</span>
+                      <span className="stat-value">{["REST APIs", "Cloud AWS", "React & Next.js"][i]}</span>
                       <span className="stat-label">Especialidad</span>
                     </div>
                   </div>

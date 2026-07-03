@@ -45,9 +45,9 @@ const AboutMe = () => {
             >
               <h3><i className="fas fa-briefcase"></i> Los Inicios</h3>
               <p>
-                Mi carrera comenzó en administración, donde desarrollé <strong>organización meticulosa</strong> y 
-                <strong>comprensión de procesos empresariales</strong>. Esta experiencia me enseñó a ver los sistemas 
-                desde la perspectiva del usuario y entender las necesidades reales del negocio.
+                Trabajé varios años en administración de cuentas, donde aprendí a optimizar procesos, 
+                manejar bases de datos y colaborar con equipos técnicos. Esa experiencia me dio contexto 
+                de negocio real que hoy aplico cuando diseño sistemas.
               </p>
             </motion.div>
 
@@ -60,9 +60,9 @@ const AboutMe = () => {
             >
               <h3><i className="fas fa-lightbulb"></i> El Descubrimiento</h3>
               <p>
-                Escribir mi primera línea de código fue encontrar mi <strong>verdadera vocación</strong>. 
-                La programación se convirtió en mi forma de expresar creatividad y resolver problemas complejos. 
-                Era mi <strong>nueva forma de pensar</strong> y crear impacto.
+                Un día ayudé a un ingeniero a optimizar consultas SQL en mi trabajo y entendí que 
+                era esto lo que quería hacer. Empecé a estudiar programación mientras seguía trabajando 
+                full-time y criando a mis tres hijos.
               </p>
             </motion.div>
 
@@ -75,8 +75,9 @@ const AboutMe = () => {
             >
               <h3><i className="fas fa-rocket"></i> La Transición</h3>
               <p>
-                Decidí hacer la transición completa al desarrollo, combinando experiencia administrativa 
-                con habilidades técnicas. Esta combinación me permite crear aplicaciones que <strong>resuelven problemas empresariales</strong> y mejoran la experiencia del usuario.
+                Terminé la Tecnicatura en Desarrollo de Software con un promedio de 9.35. 
+                Desde entonces construí más de 10 proyectos reales, obtuve certificaciones de AWS, 
+                Microsoft y Stanford, y participé en equipos de hasta 7 personas.
               </p>
             </motion.div>
 
@@ -87,11 +88,11 @@ const AboutMe = () => {
               animate={chapter4Visible ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
               transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
             >
-              <h3><i className="fas fa-heart"></i> Mi Pasión</h3>
+              <h3><i className="fas fa-heart"></i> Hoy</h3>
               <p>
-                Hoy, cada proyecto es una oportunidad para crear algo único. La programación es mi <strong>forma de expresión</strong> 
-                y lo que quiero hacer por el resto de mi vida. Busco seguir creciendo, dominar nuevas tecnologías 
-                y contribuir a proyectos que marquen la diferencia.
+                Estoy desarrollando una plataforma para ONGs con NestJS en el marco del programa 
+                Acelerador v2.0 de Polo IT Buenos Aires, y busco mi primera oportunidad full-time 
+                como Full Stack o Backend Developer.
               </p>
             </motion.div>
           </motion.div>

@@ -16,12 +16,15 @@ const OptimizedImage = memo(({
     const baseName = baseSrc.replace(/\.[^/.]+$/, '');
     const extension = baseSrc.split('.').pop();
     
+    // Convertir ruta base simple a ruta base optimizada
+    const optimizedBase = baseName.replace('/assets/img/', '/assets/img/optimized/');
+    
     return {
-      webp: `${baseName}.webp`,
+      webp: `${optimizedBase}.webp`,
       original: baseSrc,
-      small: `${baseName}-small.${extension}`,
-      medium: `${baseName}-medium.${extension}`,
-      large: `${baseName}-large.${extension}`
+      small: `${optimizedBase}-small.${extension}`,
+      medium: `${optimizedBase}-medium.${extension}`,
+      large: `${optimizedBase}-large.${extension}`
     };
   };
 

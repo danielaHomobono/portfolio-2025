@@ -38,3 +38,20 @@
     transform: none !important;
   }
 }
+
+/* VeriQuery - ajustar imagen para mostrar la parte superior (título y cabecera) */
+.project-image-container img[src*="veryq"],
+.project-image-container .optimized-image[src*="veryq"] {
+  object-fit: contain !important;
+  object-position: center top !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding-top: 20px !important;
+  box-sizing: border-box !important;
+}
+
+.project-image-container:has(img[src*="veryq"]),
+.project-image-container:has(.optimized-image[src*="veryq"]) {
+  position: relative !important;
+  background: transparent !important;
+}

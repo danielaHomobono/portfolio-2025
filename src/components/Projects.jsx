@@ -13,46 +13,45 @@ const Projects = ({ onOpenModal }) => {
   
   const projects = [
     {
-      title: "iPhone 15 Pro Max Website",
-      image: "/assets/img/iphone.png",
-      shortDescription: "Recreación interactiva del sitio oficial de Apple con experiencias 3D inmersivas usando React y Three.js.",
-      description: "Un sitio web moderno e interactivo inspirado en la experiencia oficial de Apple, creado con React, Vite y Three.js. Descubre el iPhone 15 Pro Max en 3D, explora sus características, colores y tecnología de una forma visualmente impactante.",
-      link: "https://iphon-ewebsite.vercel.app/",
-      github: "https://github.com/danielaHomobono/iPhone-website",
-      liveUrl: "https://iphon-ewebsite.vercel.app/",
-      githubUrl: "https://github.com/danielaHomobono/iPhone-website",
-      color: "#00FFFF",
-      techStack: ["React", "Three.js", "GSAP", "Vite", "WebGL", "Framer Motion"],
+      title: "VeriQuery",
+      image: "/assets/img/veryq.png",
+      shortDescription: "Plataforma que convierte consultas en lenguaje natural en queries SQL seguras usando Azure OpenAI. Reconocida en el Microsoft AI Challenge 2026 — Código Facilito.",
+      description: "Plataforma Natural Language to SQL desarrollada para el Microsoft AI Challenge 2026. Convierte consultas en lenguaje natural en queries SQL seguras utilizando Azure OpenAI, con soporte multi-database y arquitectura backend modular. Destacada por Código Facilito entre los proyectos del hackathon.",
+      link: "https://github.com/danielaHomobono/VeriQuery",
+      github: "https://github.com/danielaHomobono/VeriQuery",
+      githubUrl: "https://github.com/danielaHomobono/VeriQuery",
+      color: "#FF6B35",
+      techStack: ["Python", "FastAPI", "Azure OpenAI", "SQL Server", "PostgreSQL", "SQLite", "Docker", "REST APIs"],
       challenges: [
-        "Optimización de modelos 3D para web sin comprometer calidad visual",
-        "Implementación de animaciones fluidas con GSAP y Three.js sincronizadas",
-        "Gestión eficiente de memoria para múltiples modelos 3D",
-        "Responsive design para experiencias 3D en dispositivos móviles"
+        "Convertir lenguaje natural ambiguo en queries SQL precisas y seguras",
+        "Soporte para múltiples motores de base de datos (SQL Server, PostgreSQL, SQLite)",
+        "Protección contra SQL injection y prompt injection simultáneamente",
+        "Diseño de arquitectura backend modular y escalable"
       ],
       solutions: [
-        "Implementé lazy loading y LOD (Level of Detail) para modelos 3D",
-        "Creé un sistema de animaciones secuenciales con timeline de GSAP",
-        "Desarrollé un sistema de caché inteligente para texturas y geometrías",
-        "Implementé fallbacks 2D para dispositivos de baja potencia"
+        "Integré Azure OpenAI con sistema de prompts diseñado para generación de SQL seguro y explicable",
+        "Implementé capa de abstracción multi-database con adaptadores por motor",
+        "Desarrollé pipeline de validación con seguridad Zero-Trust antes de ejecutar cualquier query generada",
+        "Diseñé arquitectura modular con separación clara entre generación, validación y ejecución de queries"
       ],
-      architecture: "Arquitectura modular con componentes React especializados para cada sección 3D. Sistema de estado global para controlar animaciones y transiciones. Pipeline de optimización automática para assets 3D.",
+      architecture: "Backend modular con FastAPI. Pipeline de procesamiento: entrada en lenguaje natural → Azure OpenAI → validación de seguridad → adaptador de base de datos → ejecución → respuesta con explicabilidad. Seguridad Zero-Trust en cada capa.",
       learnings: [
-        "Dominio avanzado de Three.js y WebGL para experiencias inmersivas",
-        "Técnicas de optimización para aplicaciones 3D en web",
-        "Integración compleja entre librerías de animación (GSAP + Three.js)",
-        "Estrategias de fallback para garantizar accesibilidad universal"
+        "Integración avanzada con Azure OpenAI para generación de código SQL",
+        "Diseño de sistemas con seguridad Zero-Trust para IA generativa",
+        "Soporte multi-database con patrones de abstracción",
+        "Prompt engineering orientado a generación de código seguro"
       ],
       performance: {
-        "Lighthouse Score": "92/100",
-        "First Paint": "1.2s",
-        "3D Load Time": "2.8s",
-        "FPS Promedio": "60fps"
+        "Reconocimiento": "Microsoft AI Challenge 2026",
+        "Organización": "Código Facilito",
+        "Bases de datos": "SQL Server, PostgreSQL, SQLite",
+        "Seguridad": "Zero-Trust + Anti-injection"
       }
     },
     {
       title: "AI Resume Analyzer",
       image: "/assets/img/ai-resume.png",
-      shortDescription: "Analizador inteligente de currículums con IA que proporciona feedback personalizado y métricas detalladas.",
+      shortDescription: "Analizador de CVs con Claude 3 Sonnet que genera feedback ATS personalizado y scoring en 8 dimensiones. 500+ usuarios activos.",
       description: "Aplicación web full-stack construida con React, React Router, TypeScript y TailwindCSS. Permite a los usuarios subir su currículum, analizarlo con inteligencia artificial (Claude 3 Sonnet vía Puter), obtener feedback personalizado y visualizar resultados de manera interactiva.",
       link: "https://puter.com/app/jsm-ai-resume-analizer",
       github: "https://github.com/danielaHomobono/ai-resume-analyzer",
@@ -86,47 +85,83 @@ const Projects = ({ onOpenModal }) => {
         "Usuarios Activos": "500+"
       }
     },
-
     {
-      title: "Tata Clothe",
-      image: "/assets/img/ecommerce.png",
-      shortDescription: "E-commerce completo de ropa con carrito, pagos y gestión de inventario",
-      description: "Tienda online de ropa desarrollada con React y Node.js",
-  link: "https://ecommerce-project-tataclothe-ahhya9bk6.vercel.app/",
-  github: "https://github.com/danielaHomobono/Ecommerce-project",
-  githubUrl: "https://github.com/danielaHomobono/Ecommerce-project",
-      color: "#32CD32",
-      techStack: ["React", "Node.js", "MongoDB", "Express", "Stripe", "JWT", "Cloudinary"],
+      title: "HacéloCorto — Video Processor SaaS",
+      image: "/assets/img/hacelocorto.png",
+      shortDescription: "Plataforma SaaS que convierte videos horizontales a formato vertical para Reels, Shorts y TikTok con procesamiento asíncrono. Equipo de 7 personas, NoCountry.",
+      description: "Trabajé como Dev Backend en un equipo de 7 personas construyendo una plataforma que automatiza la conversión de videos horizontales a formato vertical con encuadre inteligente y publicación directa a YouTube. Arquitectura desacoplada en dos nodos: API REST (FastAPI + Redis + PostgreSQL) y nodo de procesamiento de video independiente (OpenCV + FFmpeg), comunicados mediante cola de tareas asíncrona con Redis.",
+      link: "https://github.com/No-Country-simulation/S02-26-Equipo-04-Web-App-Development",
+      github: "https://github.com/No-Country-simulation/S02-26-Equipo-04-Web-App-Development",
+      githubUrl: "https://github.com/No-Country-simulation/S02-26-Equipo-04-Web-App-Development",
+      color: "#0080FF",
+      techStack: ["Python", "FastAPI", "PostgreSQL", "Redis", "Docker", "Google OAuth 2.0", "YouTube API v3", "JWT", "MinIO", "OpenCV", "FFmpeg"],
       challenges: [
-        "Implementación de sistema de carrito de compras persistente",
-        "Gestión de inventario en tiempo real con stock tracking",
-        "Integración segura con pasarela de pagos Stripe",
-        "Sistema de autenticación y roles (cliente/admin)"
+        "Implementar autenticación segura con hashing y manejo de sesiones JWT",
+        "Desarrollar flujo OAuth 2.0 con Google desde cero sin librerías de alto nivel",
+        "Proteger contra CSRF en el flujo OAuth usando Redis como store de state con TTL",
+        "Integrar YouTube Data API v3 con tokens OAuth de larga duración"
       ],
       solutions: [
-        "Desarrollé carrito persistente con localStorage y sincronización",
-        "Implementé sistema de reservas temporales para control de stock",
-        "Creé webhooks seguros para confirmación de pagos",
-        "Implementé JWT con refresh tokens y middleware de autorización"
+        "Implementé registro y login con JWT, hashing seguro de contraseñas y middleware de autorización para protección de endpoints",
+        "Desarrollé el flujo OAuth completo: generación de authorization URL, intercambio de código por token y emisión de JWT propio",
+        "Usé Redis como store de state con TTL para protección CSRF en el flujo OAuth",
+        "Integré YouTube Data API v3 con control de privacidad y manejo de refresh tokens de larga duración"
       ],
-      architecture: "Aplicación full-stack con API REST. Frontend React con Context API para estado global. Backend Express con MongoDB. Integración con Stripe y Cloudinary para imágenes.",
+      architecture: "Arquitectura desacoplada en dos nodos: Nodo 1 (FastAPI + Redis + PostgreSQL) gestiona endpoints, valida datos y publica tareas asíncronas. Nodo 2 (Video processing) consume las tareas y ejecuta el procesamiento pesado de forma independiente. Permite escalar API y procesamiento por separado, evitar bloqueos y mejorar tolerancia a fallos.",
       learnings: [
-        "Arquitectura completa de e-commerce con múltiples servicios",
-        "Manejo de transacciones y consistencia de datos",
-        "Integración con servicios de terceros (pagos, storage)",
-        "Optimización de rendimiento para catálogos grandes"
+        "Diseño de arquitecturas desacopladas con procesamiento asíncrono",
+        "Implementación de OAuth 2.0 desde cero sin librerías de abstracción",
+        "Integración con APIs externas de terceros (Google, YouTube)",
+        "Trabajo en equipo remoto de 7 personas con Git flow estructurado"
       ],
       performance: {
-        "Productos": "500+",
-        "Tiempo Carga": "1.4s",
-        "Conversión": "8.5%",
-        "Uptime": "99.8%"
+        "Equipo": "7 personas",
+        "Rol": "Dev Backend",
+        "Stack backend": "FastAPI + PostgreSQL + Redis",
+        "Contexto": "NoCountry S02-26"
+      }
+    },
+    {
+      title: "EventPass",
+      image: "/assets/img/eventpass.png",
+      shortDescription: "Plataforma de venta de entradas con pagos reales (Stripe), control de stock en tiempo real, transacciones MongoDB y autenticación multi-rol. MERN Stack.",
+      description: "Sitio de venta de entradas creado con React, Node y MongoDB",
+      link: "https://eventpass.vercel.app/",
+      github: "https://github.com/danielaHomobono/eventpass",
+      liveUrl: "https://eventpass.vercel.app/",
+      githubUrl: "https://github.com/danielaHomobono/eventpass",
+      color: "#0080FF",
+      techStack: ["React", "Node.js", "MongoDB", "Express", "Stripe API", "JWT"],
+      challenges: [
+        "Integración segura con pasarela de pagos (Stripe)",
+        "Sistema de reservas en tiempo real con control de stock",
+        "Autenticación y autorización de usuarios multi-rol",
+        "Manejo de transacciones atómicas en MongoDB"
+      ],
+      solutions: [
+        "Implementé webhooks de Stripe para confirmación de pagos",
+        "Desarrollé sistema de locks optimistas para control de inventario",
+        "Creé middleware JWT con refresh tokens y roles",
+        "Implementé transacciones MongoDB con sessions"
+      ],
+      architecture: "API REST con Express.js and MongoDB. Frontend React con Context API. Sistema de pagos con Stripe. Autenticación JWT con refresh tokens.",
+      learnings: [
+        "Integración con pasarelas de pago y webhooks",
+        "Manejo de transacciones en aplicaciones de e-commerce",
+        "Sistemas de autenticación y autorización complejos",
+        "Arquitectura de aplicaciones de venta online"
+      ],
+      performance: {
+        "Tiempo de Carga": "1.8s",
+        "Transacciones": "100+",
+        "Eventos Activos": "25+",
+        "Conversión": "12%"
       }
     },
     {
       title: "El Lector Voraz",
       image: "/assets/img/voraz.png",
-      shortDescription: "Sistema completo de gestión para librería con inventario y ventas",
+      shortDescription: "Sistema de gestión para librería con búsqueda avanzada por aggregation pipeline MongoDB, autenticación JWT y arquitectura MVC. Node.js + Express.",
       description: "Aplicación para librería creada con Node.js y MongoDB",
       link: "https://el-lector-voraz.onrender.com",
       github: "https://el-lector-voraz.onrender.com",
@@ -160,9 +195,82 @@ const Projects = ({ onOpenModal }) => {
       }
     },
     {
+      title: "Lingua Academy",
+      image: "/assets/img/lingua.png",
+      shortDescription: "SaaS multi-tenant para consultoras de idiomas con 80+ endpoints REST, JWT, RBAC y testing automatizado. Equipo de 5 developers, Scrum.",
+      description: "Plataforma de gestión académica multi-tenant para consultoras de idiomas: gestión de profesores, estudiantes, clases y facturación automatizada. Desarrollada en equipo de 5 personas bajo metodología Scrum. Resultado: 60% menos tiempo administrativo, 80% automatización de procesos.",
+      link: "https://ppiv-consultora-deidiomastechmoms.vercel.app",
+      github: "https://github.com/romarvz/ppiv_consultora_de_idiomas_techmoms",
+      liveUrl: "https://ppiv-consultora-deidiomastechmoms.vercel.app",
+      githubUrl: "https://github.com/romarvz/ppiv_consultora_de_idiomas_techmoms",
+      color: "#7B2FBE",
+      techStack: ["Node.js", "Express", "MongoDB", "JWT", "Jest", "Supertest", "React", "Context API"],
+      challenges: [
+        "Arquitectura multi-tenant con aislamiento de datos por tenant",
+        "Sistema de roles y permisos (RBAC) para múltiples tipos de usuario",
+        "Testing automatizado de más de 80 endpoints REST",
+        "Trabajo colaborativo en equipo de 5 personas con Git flow"
+      ],
+      solutions: [
+        "Implementé middleware de autorización con JWT y control de roles por endpoint",
+        "Desarrollé suite de tests con Jest y Supertest cubriendo todos los endpoints",
+        "Coordiné integración entre frontend y backend con metodología Scrum",
+        "Diseñé arquitectura de rutas modular para escalar a múltiples tenants"
+      ],
+      architecture: "API REST con Express.js y MongoDB. Autenticación JWT con RBAC. Testing automatizado con Jest y Supertest. Frontend React con Context API para gestión de estado global.",
+      learnings: [
+        "Arquitectura multi-tenant and aislamiento de datos",
+        "Testing automatizado de APIs REST a escala",
+        "Trabajo en equipo con metodología Scrum real",
+        "Diseño de sistemas de autorización con roles complejos"
+      ],
+      performance: {
+        "Endpoints": "80+",
+        "Cobertura tests": "Alta",
+        "Equipo": "5 developers",
+        "Reducción tiempo admin": "60%"
+      }
+    },
+    {
+      title: "Tata Clothe",
+      image: "/assets/img/ecommerce.png",
+      shortDescription: "E-commerce MERN completo con carrito persistente, pagos con Stripe, webhooks de confirmación, gestión de inventario y roles admin/cliente.",
+      description: "Tienda online de ropa desarrollada con React y Node.js",
+      link: "https://ecommerce-project-tataclothe-ahhya9bk6.vercel.app/",
+      github: "https://github.com/danielaHomobono/Ecommerce-project",
+      githubUrl: "https://github.com/danielaHomobono/Ecommerce-project",
+      color: "#32CD32",
+      techStack: ["React", "Node.js", "MongoDB", "Express", "Stripe", "JWT", "Cloudinary"],
+      challenges: [
+        "Implementación de sistema de carrito de compras persistente",
+        "Gestión de inventario en tiempo real con stock tracking",
+        "Integración segura con pasarela de pagos Stripe",
+        "Sistema de autenticación y roles (cliente/admin)"
+      ],
+      solutions: [
+        "Desarrollé carrito persistente con localStorage y sincronización",
+        "Implementé sistema de reservas temporales para control de stock",
+        "Creé webhooks seguros para confirmación de pagos",
+        "Implementé JWT con refresh tokens y middleware de autorización"
+      ],
+      architecture: "Aplicación full-stack con API REST. Frontend React con Context API para estado global. Backend Express con MongoDB. Integración con Stripe y Cloudinary para imágenes.",
+      learnings: [
+        "Arquitectura completa de e-commerce con múltiples servicios",
+        "Manejo de transacciones y consistencia de datos",
+        "Integración con servicios de terceros (pagos, storage)",
+        "Optimización de rendimiento para catálogos grandes"
+      ],
+      performance: {
+        "Productos": "500+",
+        "Tiempo Carga": "1.4s",
+        "Conversión": "8.5%",
+        "Uptime": "99.8%"
+      }
+    },
+    {
       title: "Queen of the Court",
       image: "/assets/img/kapp.png",
-      shortDescription: "App Android nativa para gestión completa de clubes de tenis con arquitectura MVVM y Material Design.",
+      shortDescription: "App Android nativa para gestión de club de tenis: reservas, torneos y socios. Arquitectura MVVM, Room ORM y Material Design. Kotlin.",
       description: "App de gestión de club de tenis con Kotlin y SQLite",
       link: "https://github.com/danielaHomobono/AndroidClubDeportivo",
       github: "https://github.com/danielaHomobono/AndroidClubDeportivo",
@@ -188,80 +296,6 @@ const Projects = ({ onOpenModal }) => {
         "Diseño de bases de datos relacionales en SQLite",
         "Principios de Material Design y UX móvil"
       ]
-    },
-    {
-      title: "EventPass",
-      image: "/assets/img/eventpass.png",
-      shortDescription: "Plataforma de venta de entradas con pagos seguros y gestión de eventos",
-      description: "Sitio de venta de entradas creado con React, Node y MongoDB",
-      link: "https://eventpass.vercel.app/",
-      github: "https://github.com/danielaHomobono/eventpass",
-      liveUrl: "https://eventpass.vercel.app/",
-      githubUrl: "https://github.com/danielaHomobono/eventpass",
-      color: "#0080FF",
-      techStack: ["React", "Node.js", "MongoDB", "Express", "Stripe API", "JWT"],
-      challenges: [
-        "Integración segura con pasarela de pagos (Stripe)",
-        "Sistema de reservas en tiempo real con control de stock",
-        "Autenticación y autorización de usuarios multi-rol",
-        "Manejo de transacciones atómicas en MongoDB"
-      ],
-      solutions: [
-        "Implementé webhooks de Stripe para confirmación de pagos",
-        "Desarrollé sistema de locks optimistas para control de inventario",
-        "Creé middleware JWT con refresh tokens y roles",
-        "Implementé transacciones MongoDB con sessions"
-      ],
-      architecture: "API REST con Express.js y MongoDB. Frontend React con Context API. Sistema de pagos con Stripe. Autenticación JWT con refresh tokens.",
-      learnings: [
-        "Integración con pasarelas de pago y webhooks",
-        "Manejo de transacciones en aplicaciones de e-commerce",
-        "Sistemas de autenticación y autorización complejos",
-        "Arquitectura de aplicaciones de venta online"
-      ],
-      performance: {
-        "Tiempo de Carga": "1.8s",
-        "Transacciones": "100+",
-        "Eventos Activos": "25+",
-        "Conversión": "12%"
-      }
-    },
-    {
-      title: "Avatar con React Three Fiber",
-      image: "/assets/img/porfolio2.png",
-      shortDescription: "Portfolio interactivo 3D con avatar personalizado y física avanzada",
-      description: "Sitio creado con React y React Three Fiber",
-      link: "https://r3f-vite-portfolio.vercel.app/",
-      github: "https://github.com/danielaHomobono/r3f-portfolio",
-      liveUrl: "https://r3f-vite-portfolio.vercel.app/",
-      githubUrl: "https://github.com/danielaHomobono/r3f-portfolio",
-      color: "#00FFFF",
-      techStack: ["React", "Three.js", "React Three Fiber", "Drei", "Framer Motion", "Vite"],
-      challenges: [
-        "Creación de avatar 3D interactivo y realista",
-        "Optimización de rendimiento para modelos 3D complejos",
-        "Implementación de física y animaciones fluidas",
-        "Integración de controles de cámara intuitivos"
-      ],
-      solutions: [
-        "Implementé sistema de morphing facial con blend shapes",
-        "Desarrollé LOD system y frustum culling personalizado",
-        "Creé sistema de animaciones con state machines",
-        "Implementé controles orbitales con límites suaves"
-      ],
-      architecture: "Aplicación React con React Three Fiber para renderizado 3D. Sistema de componentes 3D modulares. Pipeline de optimización automática para assets.",
-      learnings: [
-        "Desarrollo avanzado con React Three Fiber",
-        "Técnicas de optimización para gráficos 3D en web",
-        "Implementación de sistemas de animación complejos",
-        "Integración de física en aplicaciones 3D"
-      ],
-      performance: {
-        "FPS Promedio": "60fps",
-        "Tiempo de Carga": "3.2s",
-        "Polígonos": "50K+",
-        "Texturas": "4K"
-      }
     },
     {
       title: "Generador de CV",
@@ -407,7 +441,7 @@ const Projects = ({ onOpenModal }) => {
             
             <div className="project-image-container" style={{ position: 'relative', zIndex: 2 }}>
               <OptimizedImage
-                src={project.image.replace('/assets/img/', '/assets/img/optimized/').replace('.png', '')}
+                src={project.image}
                 alt={`Captura de pantalla del proyecto ${project.title} - ${(project.shortDescription || project.description).substring(0, 100)}...`}
                 className="project-img"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
