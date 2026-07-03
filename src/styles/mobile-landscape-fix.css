@@ -296,9 +296,9 @@
   }
   
   .mission-card {
-    min-height: 150px !important;
-    max-height: 150px !important;
-    height: 150px !important;
+    min-height: 220px !important;
+    max-height: none !important;
+    height: auto !important;
     padding: 0.8rem 0.5rem !important;
     display: flex !important;
     flex-direction: column !important;
@@ -349,13 +349,8 @@
     text-overflow: ellipsis !important;
   }
   
-  .card-content {
-    display: block !important;
-    opacity: 1 !important;
-  }
-  
   .card-hover-info {
-    display: none !important;
+    border-radius: 20px !important;
   }
   
   /* ============================================
@@ -674,9 +669,9 @@
   }
   
   .mission-card {
-    min-height: 120px !important;
-    max-height: 120px !important;
-    height: 120px !important;
+    min-height: 200px !important;
+    max-height: none !important;
+    height: auto !important;
     padding: 0.5rem !important;
   }
   

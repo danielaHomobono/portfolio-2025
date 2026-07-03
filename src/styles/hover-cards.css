@@ -89,3 +89,70 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+
+/* mobile overrides for hover card details */
+@media (max-width: 768px) {
+  .card-hover-info {
+    padding: 1rem !important;
+    border-radius: 20px !important;
+  }
+  
+  .tech-stack {
+    margin-bottom: 0.8rem !important;
+  }
+  
+  .tech-stack h4 {
+    font-size: 1rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+  
+  .tech-tags {
+    gap: 0.4rem !important;
+  }
+  
+  .tech-tag {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.75rem !important;
+    border-radius: 10px !important;
+  }
+  
+  .stats {
+    gap: 0.3rem !important;
+    margin-top: 0.2rem !important;
+  }
+  
+  .stat-value {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.1rem !important;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .card-hover-info {
+    padding: 0.5rem 0.8rem !important;
+  }
+  .tech-stack {
+    margin-bottom: 0.4rem !important;
+  }
+  .tech-stack h4 {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+  .tech-tag {
+    padding: 0.15rem 0.35rem !important;
+    font-size: 0.7rem !important;
+  }
+  .stats {
+    margin-top: 0 !important;
+  }
+  .stat-value {
+    font-size: 0.95rem !important;
+  }
+  .stat-label {
+    font-size: 0.65rem !important;
+  }
+}
